@@ -8,19 +8,25 @@ final class PlayerStore {
     private let engine: PlayerEngine
     private let preferences: PreferencesStore
     private let persistence: PlaybackStatePersisting
+    private let nowPlaying: NowPlayingCenter?
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
 
     private(set) var queue: [Track] = []
     private(set) var currentIndex: Int = 0
     private(set) var isPlaying: Bool = false
 
+    @ObservationIgnored private(set) var currentTime: TimeInterval = 0
     @ObservationIgnored private var shuffleHistory: Set<Int> = []
     @ObservationIgnored private var currentDuration: TimeInterval = 0
 
-    init(engine: PlayerEngine, preferences: PreferencesStore, persistence: PlaybackStatePersisting) {
+    init(engine: PlayerEngine,
+         preferences: PreferencesStore,
+         persistence: PlaybackStatePersisting,
+         nowPlaying: NowPlayingCenter? = nil) {
         self.engine = engine
         self.preferences = preferences
         self.persistence = persistence
+        self.nowPlaying = nowPlaying
 
         engine.didFinishPublisher
             .sink { [weak self] in
@@ -29,7 +35,15 @@ final class PlayerStore {
             .store(in: &cancellables)
         engine.isPlayingPublisher
             .sink { [weak self] value in
-                MainActor.assumeIsolated { self?.isPlaying = value }
+                MainActor.assumeIsolated {
+                    self?.isPlaying = value
+                    self?.updateNowPlaying()
+                }
+            }
+            .store(in: &cancellables)
+        engine.currentTimePublisher
+            .sink { [weak self] time in
+                MainActor.assumeIsolated { self?.currentTime = time }
             }
             .store(in: &cancellables)
         engine.durationPublisher
@@ -81,6 +95,16 @@ final class PlayerStore {
     }
 
     func setLoopMode(_ mode: LoopMode) { preferences.loopMode = mode }
+
+    func skip(by seconds: TimeInterval) {
+        let target: TimeInterval
+        if currentDuration > 0 {
+            target = max(0, min(currentDuration, currentTime + seconds))
+        } else {
+            target = max(0, currentTime + seconds)
+        }
+        engine.seek(to: target)
+    }
 
     func toggleShuffle() {
         preferences.shuffleEnabled.toggle()
@@ -135,5 +159,16 @@ final class PlayerStore {
             }
         }
         engine.play()
+        updateNowPlaying()
+    }
+
+    private func updateNowPlaying() {
+        guard let track = currentTrack else { return }
+        nowPlaying?.update(
+            title: track.displayTitle,
+            duration: currentDuration,
+            elapsed: currentTime,
+            rate: preferences.playbackRate
+        )
     }
 }
