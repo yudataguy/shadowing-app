@@ -7,11 +7,13 @@ final class FakePlayerEngine: PlayerEngine {
     let currentTimeSubject = CurrentValueSubject<TimeInterval, Never>(0)
     let durationSubject = CurrentValueSubject<TimeInterval, Never>(0)
     let didFinishSubject = PassthroughSubject<Void, Never>()
+    let failureSubject = PassthroughSubject<String, Never>()
 
     var isPlayingPublisher: AnyPublisher<Bool, Never> { isPlayingSubject.eraseToAnyPublisher() }
     var currentTimePublisher: AnyPublisher<TimeInterval, Never> { currentTimeSubject.eraseToAnyPublisher() }
     var durationPublisher: AnyPublisher<TimeInterval, Never> { durationSubject.eraseToAnyPublisher() }
     var didFinishPublisher: AnyPublisher<Void, Never> { didFinishSubject.eraseToAnyPublisher() }
+    var failurePublisher: AnyPublisher<String, Never> { failureSubject.eraseToAnyPublisher() }
 
     private(set) var loadedURLs: [URL] = []
     private(set) var didCallPlay = 0

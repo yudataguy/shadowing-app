@@ -21,6 +21,7 @@ final class PlayerStore {
     private(set) var currentTime: TimeInterval = 0
     @ObservationIgnored private var shuffleHistory: Set<Int> = []
     private(set) var currentDuration: TimeInterval = 0
+    private(set) var lastError: String? = nil
 
     init(engine: PlayerEngine,
          preferences: PreferencesStore,
@@ -52,6 +53,11 @@ final class PlayerStore {
         engine.durationPublisher
             .sink { [weak self] value in
                 MainActor.assumeIsolated { self?.currentDuration = value }
+            }
+            .store(in: &cancellables)
+        engine.failurePublisher
+            .sink { [weak self] message in
+                MainActor.assumeIsolated { self?.lastError = message }
             }
             .store(in: &cancellables)
         engine.currentTimePublisher
@@ -134,6 +140,10 @@ final class PlayerStore {
             target = max(0, currentTime + seconds)
         }
         engine.seek(to: target)
+    }
+
+    func clearError() {
+        lastError = nil
     }
 
     func toggleShuffle() {

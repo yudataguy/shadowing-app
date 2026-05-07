@@ -11,6 +11,7 @@ final class AVPlayerEngine: PlayerEngine {
     private let currentTimeSubject = CurrentValueSubject<TimeInterval, Never>(0)
     private let durationSubject = CurrentValueSubject<TimeInterval, Never>(0)
     private let didFinishSubject = PassthroughSubject<Void, Never>()
+    private let failureSubject = PassthroughSubject<String, Never>()
 
     var isPlayingPublisher: AnyPublisher<Bool, Never> {
         isPlayingSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
@@ -23,6 +24,9 @@ final class AVPlayerEngine: PlayerEngine {
     }
     var didFinishPublisher: AnyPublisher<Void, Never> {
         didFinishSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    var failurePublisher: AnyPublisher<String, Never> {
+        failureSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
     }
 
     init() {
@@ -48,6 +52,17 @@ final class AVPlayerEngine: PlayerEngine {
     func load(url: URL) {
         let item = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: item)
+
+        // Observe item status to detect failures.
+        item.publisher(for: \.status)
+            .sink { [weak self] status in
+                if status == .failed {
+                    let message = item.error?.localizedDescription ?? "Couldn't play this track."
+                    self?.failureSubject.send(message)
+                }
+            }
+            .store(in: &cancellables)
+
         Task { @MainActor in
             let duration = (try? await item.asset.load(.duration).seconds) ?? 0
             durationSubject.send(duration)

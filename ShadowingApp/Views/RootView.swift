@@ -16,6 +16,16 @@ struct RootView: View {
         .sheet(isPresented: $showNowPlaying) {
             NowPlayingSheet()
         }
+        .alert("Playback error",
+               isPresented: Binding(
+                   get: { player.lastError != nil },
+                   set: { if !$0 { player.clearError() } }
+               ),
+               presenting: player.lastError) { _ in
+            Button("OK") { player.clearError() }
+        } message: { error in
+            Text(error)
+        }
     }
 }
 
