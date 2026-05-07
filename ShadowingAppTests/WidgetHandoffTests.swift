@@ -7,13 +7,12 @@ final class WidgetHandoffTests: XCTestCase {
         let suiteName = "test-\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!
         defer { defaults.removePersistentDomain(forName: suiteName) }
-
         defaults.set("uuid-abc", forKey: PlayPlaylistIntent.pendingIDKey)
 
         var resolvedID: String?
         let handoff = WidgetHandoff(
             defaults: defaults,
-            lookupAndPlay: { id in resolvedID = id }
+            lookupAndPlay: { id in resolvedID = id; return true }
         )
         handoff.handle()
 
@@ -29,10 +28,24 @@ final class WidgetHandoffTests: XCTestCase {
         var called = false
         let handoff = WidgetHandoff(
             defaults: defaults,
-            lookupAndPlay: { _ in called = true }
+            lookupAndPlay: { _ in called = true; return true }
+        )
+        handoff.handle()
+        XCTAssertFalse(called)
+    }
+
+    func test_handle_doesNotClearKeyOnFailure() async throws {
+        let suiteName = "test-\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        defaults.set("uuid-abc", forKey: PlayPlaylistIntent.pendingIDKey)
+
+        let handoff = WidgetHandoff(
+            defaults: defaults,
+            lookupAndPlay: { _ in false }
         )
         handoff.handle()
 
-        XCTAssertFalse(called)
+        XCTAssertEqual(defaults.string(forKey: PlayPlaylistIntent.pendingIDKey), "uuid-abc")
     }
 }

@@ -42,21 +42,22 @@ struct RootView: View {
     private func handleWidgetHandoff() {
         let handoff = WidgetHandoff(
             defaults: UserDefaults(suiteName: AppGroup.identifier),
-            lookupAndPlay: { idString in
-                guard let uuid = UUID(uuidString: idString) else { return }
+            lookupAndPlay: { idString -> Bool in
+                guard let uuid = UUID(uuidString: idString) else { return false }
                 let descriptor = FetchDescriptor<Playlist>(
                     predicate: #Predicate { $0.id == uuid }
                 )
-                guard let playlist = try? modelContext.fetch(descriptor).first else { return }
+                guard let playlist = try? modelContext.fetch(descriptor).first else { return false }
                 let entries = playlist.entries.sorted { $0.position < $1.position }
                 let tracks = entries.compactMap {
                     librarySnapshot.track(forStableID: $0.trackStableID)
                 }
-                guard !tracks.isEmpty else { return }
+                guard !tracks.isEmpty else { return false }
                 playlist.lastPlayedAt = .now
                 try? modelContext.save()
                 snapshotPublisher.publish()
                 player.playPlaylist(tracks)
+                return true
             }
         )
         handoff.handle()

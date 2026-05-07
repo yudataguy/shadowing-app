@@ -3,14 +3,17 @@ import Foundation
 @MainActor
 struct WidgetHandoff {
     let defaults: UserDefaults?
-    let lookupAndPlay: (String) -> Void
+    /// Returns true if the playlist was successfully played. Only on success
+    /// will the pending key be cleared.
+    let lookupAndPlay: (String) -> Bool
 
     func handle() {
         guard let defaults,
               let id = defaults.string(forKey: PlayPlaylistIntent.pendingIDKey) else {
             return
         }
-        defaults.removeObject(forKey: PlayPlaylistIntent.pendingIDKey)
-        lookupAndPlay(id)
+        if lookupAndPlay(id) {
+            defaults.removeObject(forKey: PlayPlaylistIntent.pendingIDKey)
+        }
     }
 }
