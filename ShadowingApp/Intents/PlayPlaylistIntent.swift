@@ -5,6 +5,7 @@ struct PlayPlaylistIntent: AppIntent {
     static var title: LocalizedStringResource = "Play Playlist"
     static var description = IntentDescription("Open Shadowing and play a specific playlist.")
     static var openAppWhenRun: Bool = true
+    static var isDiscoverable: Bool = false
 
     static let pendingIDKey = "pendingPlaylistID"
 
