@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct ShadowingAppApp: App {
@@ -6,5 +7,6 @@ struct ShadowingAppApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Playlist.self, PlaylistEntry.self, PlaybackState.self])
     }
 }
