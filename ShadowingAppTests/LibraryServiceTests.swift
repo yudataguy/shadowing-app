@@ -37,4 +37,22 @@ final class LibraryServiceTests: XCTestCase {
         let tracks = LibraryService.scan(rootURL: tmp, folderID: UUID())
         XCTAssertEqual(tracks.count, 2)
     }
+
+    func test_scan_detectsiCloudPlaceholders() {
+        // Simulate iCloud Drive's not-yet-downloaded representation
+        touch("lessons/.song.mp3.icloud")
+        touch("lessons/regular.mp3")
+        let tracks = LibraryService.scan(rootURL: tmp, folderID: UUID())
+        XCTAssertEqual(
+            Set(tracks.map(\.relativePath)),
+            Set(["lessons/song.mp3", "lessons/regular.mp3"])
+        )
+    }
+
+    func test_scan_ignoresOtherHiddenFiles() {
+        touch(".DS_Store")
+        touch("a.mp3")
+        let tracks = LibraryService.scan(rootURL: tmp, folderID: UUID())
+        XCTAssertEqual(tracks.map(\.relativePath), ["a.mp3"])
+    }
 }
