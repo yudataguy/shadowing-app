@@ -19,6 +19,7 @@
 		39F7B49FC89DE037857E117C /* FolderSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604E843664305FA125A76D8 /* FolderSectionHeader.swift */; };
 		3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */; };
 		3CFA5B10EBFA7D9CD4F2E05C /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853A3C1AA6BCFC7D937082 /* PlaylistDetailView.swift */; };
+		3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7D6E60891A5E434642DF56 /* Assets.xcassets */; };
 		42D04352FE4266D34B465B27 /* LibraryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37918FF1D1721975C40385BD /* LibraryServiceTests.swift */; };
 		45DE2761EE2F42102F564262 /* PlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D7E7AA5FF64F8F0D905E34 /* PlayerEngine.swift */; };
 		46F66C9A10907ECFDD7DE88A /* AudioSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC612E7D9FE039A0D838DC9C /* AudioSessionCoordinator.swift */; };
@@ -62,28 +63,29 @@
 		013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowingAppApp.swift; sourceTree = "<group>"; };
 		017FE554AC517F28DE289FD1 /* NowPlayingCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCenter.swift; sourceTree = "<group>"; };
 		018ED14221BC2166ED1B0303 /* MiniPlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerBar.swift; sourceTree = "<group>"; };
-		03C37934D1A7E1E68003FB38 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		0702EB5784B795D2FFAE3612 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		03C37934D1A7E1E68003FB38 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		0702EB5784B795D2FFAE3612 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		080157B13D804FD26C8431C4 /* PlayerStoreQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStoreQueueTests.swift; sourceTree = "<group>"; };
 		0C7D6A28B8939A88ED13E99D /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		110C4AC608AF0209A1840688 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
-		13A7001E9309792DF86B2B7D /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		13A7001E9309792DF86B2B7D /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSheet.swift; sourceTree = "<group>"; };
 		1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStoreTests.swift; sourceTree = "<group>"; };
 		1F0DF2478B5384F2271CE452 /* ScrubberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrubberView.swift; sourceTree = "<group>"; };
 		238F994839829652238D3AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2EC03C96B91D602D1A799C9B /* PlayerStoreResumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStoreResumeTests.swift; sourceTree = "<group>"; };
+		2F7D6E60891A5E434642DF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		314444F48B3DB6A2B79E2336 /* FoldersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersSettingsView.swift; sourceTree = "<group>"; };
 		36D7E7AA5FF64F8F0D905E34 /* PlayerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEngine.swift; sourceTree = "<group>"; };
 		37918FF1D1721975C40385BD /* LibraryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryServiceTests.swift; sourceTree = "<group>"; };
-		3A20790FBEFB1D3301080955 /* ShadowingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadowingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C11BB0E55305C2B41BE9DAA /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3A20790FBEFB1D3301080955 /* ShadowingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ShadowingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C11BB0E55305C2B41BE9DAA /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		53160099814CBCF9EB672F3F /* AVPlayerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerEngine.swift; sourceTree = "<group>"; };
 		58D51F486911CCE5BB8E562C /* LoopMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopMode.swift; sourceTree = "<group>"; };
 		5D9ECACD95DC54AEADA2E3F9 /* PreferencesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStoreTests.swift; sourceTree = "<group>"; };
 		68C9A976CAD480D58B1F6989 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		6C02BAC2EAF51097A664D808 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
-		70BDA7A13418672E88477EF7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		70BDA7A13418672E88477EF7 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		71B6F0BBEE36BD015CDACDF4 /* LibrarySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySnapshot.swift; sourceTree = "<group>"; };
 		7D53CCD5E610B27B1BBEFD88 /* ShadowingAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ShadowingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FCE253BC6FF95A3059DAFD /* PlayerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStore.swift; sourceTree = "<group>"; };
@@ -93,12 +95,12 @@
 		9DE8F2D89415DD7C6912A4BE /* SwiftDataPlaybackPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPlaybackPersistence.swift; sourceTree = "<group>"; };
 		AA417C390BED0F79E4C6A25D /* TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTests.swift; sourceTree = "<group>"; };
 		ACE8479BAEAB28CB2736F7CF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistSheet.swift; sourceTree = "<group>"; };
 		CE025F87AD364699EF0C2DB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
-		E385B73864146DF6E34D59BB /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E385B73864146DF6E34D59BB /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		E604E843664305FA125A76D8 /* FolderSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSectionHeader.swift; sourceTree = "<group>"; };
 		E6853A3C1AA6BCFC7D937082 /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
 		E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistEntry.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		A81B34FAD228A7BDF7C7A02F /* ShadowingApp */ = {
 			isa = PBXGroup;
 			children = (
+				2F7D6E60891A5E434642DF56 /* Assets.xcassets */,
 				238F994839829652238D3AF0 /* Info.plist */,
 				013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */,
 				D0E8A72AFB662CA37539990F /* Audio */,
@@ -280,6 +283,7 @@
 			buildConfigurationList = 8EFCD3F6FC69D500EE5CE429 /* Build configuration list for PBXNativeTarget "ShadowingApp" */;
 			buildPhases = (
 				C2E5C209ECB03F77E4F21347 /* Sources */,
+				E52664094F0C5B8A556D1671 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -343,6 +347,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E52664094F0C5B8A556D1671 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7034ADB7B3C7FF90D7FA9F53 /* Sources */ = {
@@ -471,7 +486,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQDD55SCR8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -555,7 +569,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQDD55SCR8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
