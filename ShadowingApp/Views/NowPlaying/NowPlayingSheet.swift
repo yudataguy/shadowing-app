@@ -57,8 +57,11 @@ struct NowPlayingSheet: View {
                     Button {
                         player.setLoopMode(player.loopMode.next)
                     } label: {
-                        Image(systemName: loopIcon)
-                            .foregroundStyle(player.loopMode == .off ? .primary : Color.accentColor)
+                        HStack(spacing: 4) {
+                            Image(systemName: loopIcon)
+                            Text(loopBadge).font(.caption2)
+                        }
+                        .foregroundStyle(player.loopMode == .off ? .primary : Color.accentColor)
                     }
 
                     Menu {
@@ -110,6 +113,14 @@ struct NowPlayingSheet: View {
         case .off: return "repeat"
         case .track: return "repeat.1"
         case .playlist: return "repeat"
+        }
+    }
+
+    private var loopBadge: String {
+        switch player.loopMode {
+        case .off: return "Off"
+        case .track: return "1"
+        case .playlist: return "All"
         }
     }
 
