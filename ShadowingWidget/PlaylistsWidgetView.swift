@@ -13,14 +13,26 @@ struct PlaylistsWidgetView: View {
     }
 
     var body: some View {
-        if entry.playlists.isEmpty {
-            emptyState
-        } else {
-            grid
+        Group {
+            if entry.playlists.isEmpty {
+                emptyContent
+            } else {
+                gridContent
+            }
         }
+        .containerBackground(for: .widget) { background }
     }
 
-    private var grid: some View {
+    private var background: some View {
+        LinearGradient(
+            colors: [Color(red: 0.39, green: 0.40, blue: 0.95),
+                     Color(red: 0.02, green: 0.71, blue: 0.83)],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+
+    private var gridContent: some View {
         VStack(spacing: 6) {
             HStack(spacing: 6) {
                 tile(displayed[0])
@@ -30,14 +42,6 @@ struct PlaylistsWidgetView: View {
                 tile(displayed[2])
                 tile(displayed[3])
             }
-        }
-        .containerBackground(for: .widget) {
-            LinearGradient(
-                colors: [Color(red: 0.39, green: 0.40, blue: 0.95),
-                         Color(red: 0.02, green: 0.71, blue: 0.83)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
         }
     }
 
@@ -71,7 +75,7 @@ struct PlaylistsWidgetView: View {
         }
     }
 
-    private var emptyState: some View {
+    private var emptyContent: some View {
         VStack(spacing: 6) {
             Image(systemName: "rectangle.stack.badge.plus")
                 .font(.title2)
@@ -83,13 +87,5 @@ struct PlaylistsWidgetView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .containerBackground(for: .widget) {
-            LinearGradient(
-                colors: [Color(red: 0.39, green: 0.40, blue: 0.95),
-                         Color(red: 0.02, green: 0.71, blue: 0.83)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        }
     }
 }
