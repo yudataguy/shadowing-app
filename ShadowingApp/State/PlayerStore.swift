@@ -74,6 +74,14 @@ final class PlayerStore {
         loadAndPlayCurrent()
     }
 
+    func playFolder(_ tracks: [Track], shuffled: Bool) {
+        guard !tracks.isEmpty else { return }
+        if shuffled {
+            preferences.shuffleEnabled = true
+        }
+        play(queue: tracks, startIndex: shuffled ? Int.random(in: 0..<tracks.count) : 0)
+    }
+
     func togglePlayPause() {
         isPlaying ? engine.pause() : engine.play()
     }
