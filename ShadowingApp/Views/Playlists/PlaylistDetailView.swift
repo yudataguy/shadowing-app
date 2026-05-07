@@ -6,6 +6,8 @@ struct PlaylistDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var snapshot
     @Environment(PlayerStore.self) private var player
+    @State private var showRename = false
+    @State private var renameText = ""
 
     private var orderedTracks: [Track] {
         playlist.entries
@@ -38,7 +40,27 @@ struct PlaylistDetailView: View {
         .listStyle(.plain)
         .navigationTitle(playlist.name)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar { EditButton() }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    renameText = playlist.name
+                    showRename = true
+                } label: { Image(systemName: "pencil") }
+            }
+        }
+        .alert("Rename Playlist", isPresented: $showRename) {
+            TextField("Playlist name", text: $renameText)
+            Button("Cancel", role: .cancel) {}
+            Button("Save") {
+                let trimmed = renameText.trimmingCharacters(in: .whitespaces)
+                guard !trimmed.isEmpty else { return }
+                playlist.name = trimmed
+                try? modelContext.save()
+            }
+        }
     }
 
     private func moveTracks(from source: IndexSet, to destination: Int) {

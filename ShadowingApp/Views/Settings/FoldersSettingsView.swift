@@ -5,6 +5,8 @@ struct FoldersSettingsView: View {
     @Environment(BookmarkStore.self) private var bookmarks
     @State private var folders: [FolderBookmark] = []
     @State private var showPicker = false
+    @State private var renameTarget: FolderBookmark?
+    @State private var renameText = ""
 
     var body: some View {
         NavigationStack {
@@ -17,7 +19,18 @@ struct FoldersSettingsView: View {
                     )
                 } else {
                     ForEach(folders) { folder in
-                        Text(folder.displayName)
+                        Button {
+                            renameTarget = folder
+                            renameText = folder.displayName
+                        } label: {
+                            HStack {
+                                Text(folder.displayName)
+                                    .foregroundStyle(.primary)
+                                Spacer()
+                                Image(systemName: "pencil")
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                     .onDelete(perform: removeFolders)
                 }
@@ -50,6 +63,25 @@ struct FoldersSettingsView: View {
                 }
             }
             .onAppear { folders = bookmarks.all() }
+            .alert("Rename Folder",
+                   isPresented: Binding(
+                       get: { renameTarget != nil },
+                       set: { if !$0 { renameTarget = nil } }
+                   ),
+                   presenting: renameTarget) { folder in
+                TextField("Folder name", text: $renameText)
+                Button("Cancel", role: .cancel) {}
+                Button("Save") {
+                    let trimmed = renameText.trimmingCharacters(in: .whitespaces)
+                    guard !trimmed.isEmpty else { return }
+                    var updated = folder
+                    updated.displayName = trimmed
+                    bookmarks.update(updated)
+                    folders = bookmarks.all()
+                }
+            } message: { _ in
+                Text("Choose a name to display for this folder.")
+            }
         }
     }
 
