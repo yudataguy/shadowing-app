@@ -6,6 +6,7 @@ struct RootView: View {
     @Environment(PlayerStore.self) private var player
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var librarySnapshot
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         TabView {
@@ -30,6 +31,11 @@ struct RootView: View {
             Text(error)
         }
         .task { handleWidgetHandoff() }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                handleWidgetHandoff()
+            }
+        }
     }
 
     private func handleWidgetHandoff() {
