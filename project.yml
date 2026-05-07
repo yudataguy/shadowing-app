@@ -33,6 +33,10 @@ targets:
         GENERATE_INFOPLIST_FILE: "NO"
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_ENTITLEMENTS: ShadowingApp/ShadowingApp.entitlements
+    dependencies:
+      - target: ShadowingWidget
+        embed: true
+        codeSign: true
 
   ShadowingAppTests:
     type: bundle.unit-test
@@ -47,3 +51,28 @@ targets:
         GENERATE_INFOPLIST_FILE: "YES"
         BUNDLE_LOADER: $(TEST_HOST)
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/ShadowingApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShadowingApp
+
+  ShadowingWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ShadowingWidget
+      - path: ShadowingApp/Intents/PlayPlaylistIntent.swift
+      - path: ShadowingApp/Services/AppGroup.swift
+      - path: ShadowingApp/Models/Playlist.swift
+      - path: ShadowingApp/Models/PlaylistEntry.swift
+      - path: ShadowingApp/Models/PlaybackState.swift
+    info:
+      path: ShadowingWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Shadowing
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yudataguy.ShadowingApp.Widget
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_ENTITLEMENTS: ShadowingWidget/ShadowingWidget.entitlements
+        GENERATE_INFOPLIST_FILE: "NO"
+        SKIP_INSTALL: "NO"

@@ -10,12 +10,14 @@
 		05629FCD80CA9F4DF7929882 /* PreferencesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9ECACD95DC54AEADA2E3F9 /* PreferencesStoreTests.swift */; };
 		074A4A42B4C77B1B290C4A0A /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02BAC2EAF51097A664D808 /* PlaylistsView.swift */; };
 		0CB89FF545D405A40522D1EA /* NowPlayingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */; };
+		0D767873BDA39BDD692DB4AC /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC6A60E548AAA41D35074 /* AppGroup.swift */; };
 		1AC453D9BB47AB74F9322A96 /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3480AF515DC221A582B81 /* PlaybackState.swift */; };
 		1E2EEE2A5B992A176D72B99A /* ScrubberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DF2478B5384F2271CE452 /* ScrubberView.swift */; };
 		23AE6AB29C55BB18D4A52715 /* PlayPlaylistIntentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F499B60997B6359A6FBDD /* PlayPlaylistIntentTests.swift */; };
 		2BEC197CC38C6ABA8166A72E /* ShadowingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */; };
 		2C792C5F3FADC098417BEBB3 /* PlaybackStatePersisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE016E46F9CFE848220B34 /* PlaybackStatePersisting.swift */; };
 		32A1B945EDFF359ED4CDD423 /* AddToPlaylistSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */; };
+		367BAFFDDC9CF1501ACFC95D /* PlaylistsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */; };
 		3865ACEA44A0EC9AD2FF3064 /* FolderBookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED21FECAE78163A0F09682 /* FolderBookmark.swift */; };
 		39F7B49FC89DE037857E117C /* FolderSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604E843664305FA125A76D8 /* FolderSectionHeader.swift */; };
 		3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */; };
@@ -25,20 +27,24 @@
 		42D04352FE4266D34B465B27 /* LibraryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37918FF1D1721975C40385BD /* LibraryServiceTests.swift */; };
 		45DE2761EE2F42102F564262 /* PlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D7E7AA5FF64F8F0D905E34 /* PlayerEngine.swift */; };
 		46F66C9A10907ECFDD7DE88A /* AudioSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC612E7D9FE039A0D838DC9C /* AudioSessionCoordinator.swift */; };
+		4B7B08307E942496EB753B60 /* PlaylistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */; };
 		537913CAB4DEFFDFD479A486 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		543CE4B4BE6B6828CD551FE5 /* NewPlaylistSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC527BD551A5EC737C4C6E3E /* NewPlaylistSheet.swift */; };
 		64C3BD22EE54BF22A5C443C1 /* WidgetHandoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */; };
 		6DD139C83DFC10DD3484FD9D /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC6A60E548AAA41D35074 /* AppGroup.swift */; };
 		6E5D703082E9606F4EB300C6 /* BookmarkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */; };
 		72F013FA221E81C8676AD6D3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE025F87AD364699EF0C2DB8 /* RootView.swift */; };
+		7494C7D152E7149A8B233D9A /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3480AF515DC221A582B81 /* PlaybackState.swift */; };
 		77DD8618EE43B9492271FA03 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C9A976CAD480D58B1F6989 /* Playlist.swift */; };
 		7A6E92DD087116068E90B0FD /* NowPlayingCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FE554AC517F28DE289FD1 /* NowPlayingCenter.swift */; };
 		7C63142AE4DEE17B398A1169 /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */; };
+		82CCA331A4815F7FFEB14CB9 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C9A976CAD480D58B1F6989 /* Playlist.swift */; };
 		84D10E0DDF0B77D6D7F70954 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7D6A28B8939A88ED13E99D /* DocumentPicker.swift */; };
 		87ED6EEAE3E02BE0635F60FC /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ED14221BC2166ED1B0303 /* MiniPlayerBar.swift */; };
 		8804E34B200EE70F638C60C0 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C4AC608AF0209A1840688 /* TrackRow.swift */; };
 		8B2B82D6ACB167EAD4EF4447 /* PlaylistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */; };
 		92D0C7955C06FE475F982464 /* LoopMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D51F486911CCE5BB8E562C /* LoopMode.swift */; };
+		95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		9BBCBA85CCDEF34408953CAA /* PlayerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCE253BC6FF95A3059DAFD /* PlayerStore.swift */; };
 		9CC33FEA7E8AE1A530D8A339 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */; };
 		AFC3996E39791FD29E07BCC1 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FF795F0E0A7021056729A /* LibraryView.swift */; };
@@ -50,11 +56,20 @@
 		D88B89B87DCC02624D6F5F58 /* TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA417C390BED0F79E4C6A25D /* TrackTests.swift */; };
 		DAC1CDE9D9203CF903A23D28 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856562249660E048B874511 /* LibraryService.swift */; };
 		E14895C86E3F3BB0A545D111 /* PlayerStoreResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC03C96B91D602D1A799C9B /* PlayerStoreResumeTests.swift */; };
+		E21E9676E2C3254EF20C4DE3 /* ShadowingWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4995E331261446AD92E6936 /* FoldersSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314444F48B3DB6A2B79E2336 /* FoldersSettingsView.swift */; };
 		EBCA2A9F461A626F8FFAFE2E /* PlayerStoreQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080157B13D804FD26C8431C4 /* PlayerStoreQueueTests.swift */; };
+		F0DFFDF572CE9939B5B6C240 /* ShadowingWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A674582863E61CD3A70804 /* ShadowingWidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5DCD35BD79670E8F3BADD8CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20C60FF98B918FB06F127C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA1C3CFCF2B3E27830DDDBC9;
+			remoteInfo = ShadowingWidget;
+		};
 		C7C4ABF1B0867ED4E0B5D7D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A20C60FF98B918FB06F127C6 /* Project object */;
@@ -63,6 +78,20 @@
 			remoteInfo = ShadowingApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEBBF3B6201331E8D4BF7E24 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E21E9676E2C3254EF20C4DE3 /* ShadowingWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowingAppApp.swift; sourceTree = "<group>"; };
@@ -85,14 +114,17 @@
 		37918FF1D1721975C40385BD /* LibraryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryServiceTests.swift; sourceTree = "<group>"; };
 		3A20790FBEFB1D3301080955 /* ShadowingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ShadowingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C11BB0E55305C2B41BE9DAA /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		3D73D6B1C74113EC86DE73C4 /* ShadowingWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowingWidget.entitlements; sourceTree = "<group>"; };
 		53160099814CBCF9EB672F3F /* AVPlayerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerEngine.swift; sourceTree = "<group>"; };
 		58D51F486911CCE5BB8E562C /* LoopMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopMode.swift; sourceTree = "<group>"; };
 		5D9ECACD95DC54AEADA2E3F9 /* PreferencesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStoreTests.swift; sourceTree = "<group>"; };
 		5E7F499B60997B6359A6FBDD /* PlayPlaylistIntentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPlaylistIntentTests.swift; sourceTree = "<group>"; };
 		64326E1883F9B602EC07F7C2 /* WidgetHandoffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHandoffTests.swift; sourceTree = "<group>"; };
+		66A674582863E61CD3A70804 /* ShadowingWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowingWidgetBundle.swift; sourceTree = "<group>"; };
 		6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHandoff.swift; sourceTree = "<group>"; };
 		68C9A976CAD480D58B1F6989 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		6C02BAC2EAF51097A664D808 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
+		6FDBFA4F1312B312FEAF3FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		70BDA7A13418672E88477EF7 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		71B6F0BBEE36BD015CDACDF4 /* LibrarySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySnapshot.swift; sourceTree = "<group>"; };
 		7D53CCD5E610B27B1BBEFD88 /* ShadowingAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ShadowingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,9 +137,11 @@
 		ACE8479BAEAB28CB2736F7CF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AFA3F40C6C561B344CE3EEB7 /* ShadowingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowingApp.entitlements; sourceTree = "<group>"; };
 		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidget.swift; sourceTree = "<group>"; };
 		C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPlaylistIntent.swift; sourceTree = "<group>"; };
 		CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistSheet.swift; sourceTree = "<group>"; };
 		CE025F87AD364699EF0C2DB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShadowingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
 		E385B73864146DF6E34D59BB /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
@@ -153,6 +187,7 @@
 			children = (
 				A81B34FAD228A7BDF7C7A02F /* ShadowingApp */,
 				73B2BD7AC229C0C6FA6C029B /* ShadowingAppTests */,
+				AEAFBB84B3BA2C6F7B87E108 /* ShadowingWidget */,
 				514EDE355BF8DF0F48F63AF5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -197,6 +232,7 @@
 			children = (
 				3A20790FBEFB1D3301080955 /* ShadowingApp.app */,
 				7D53CCD5E610B27B1BBEFD88 /* ShadowingAppTests.xctest */,
+				D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +277,17 @@
 				18ECA3A706CFF7DC180D6E7C /* Views */,
 			);
 			path = ShadowingApp;
+			sourceTree = "<group>";
+		};
+		AEAFBB84B3BA2C6F7B87E108 /* ShadowingWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6FDBFA4F1312B312FEAF3FBB /* Info.plist */,
+				C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */,
+				3D73D6B1C74113EC86DE73C4 /* ShadowingWidget.entitlements */,
+				66A674582863E61CD3A70804 /* ShadowingWidgetBundle.swift */,
+			);
+			path = ShadowingWidget;
 			sourceTree = "<group>";
 		};
 		CEF2EA1D8664B147B73452AB /* Services */ = {
@@ -309,10 +356,12 @@
 			buildPhases = (
 				C2E5C209ECB03F77E4F21347 /* Sources */,
 				E52664094F0C5B8A556D1671 /* Resources */,
+				EEBBF3B6201331E8D4BF7E24 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C1581737135FB592DB8678D /* PBXTargetDependency */,
 			);
 			name = ShadowingApp;
 			packageProductDependencies = (
@@ -338,6 +387,23 @@
 			productName = ShadowingAppTests;
 			productReference = 7D53CCD5E610B27B1BBEFD88 /* ShadowingAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA1C3CFCF2B3E27830DDDBC9 /* ShadowingWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BB917D9F7EB11A1FF418A01 /* Build configuration list for PBXNativeTarget "ShadowingWidget" */;
+			buildPhases = (
+				5E6F5E5479AB19C974CBDD3F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShadowingWidget;
+			packageProductDependencies = (
+			);
+			productName = ShadowingWidget;
+			productReference = D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -369,6 +435,7 @@
 			targets = (
 				491A2F8348FE8DB7DDE189DC /* ShadowingApp */,
 				961D75649FA5D549D28BDF02 /* ShadowingAppTests */,
+				CA1C3CFCF2B3E27830DDDBC9 /* ShadowingWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -385,6 +452,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E6F5E5479AB19C974CBDD3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D767873BDA39BDD692DB4AC /* AppGroup.swift in Sources */,
+				95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */,
+				7494C7D152E7149A8B233D9A /* PlaybackState.swift in Sources */,
+				82CCA331A4815F7FFEB14CB9 /* Playlist.swift in Sources */,
+				4B7B08307E942496EB753B60 /* PlaylistEntry.swift in Sources */,
+				367BAFFDDC9CF1501ACFC95D /* PlaylistsWidget.swift in Sources */,
+				F0DFFDF572CE9939B5B6C240 /* ShadowingWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7034ADB7B3C7FF90D7FA9F53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,9 +532,33 @@
 			target = 491A2F8348FE8DB7DDE189DC /* ShadowingApp */;
 			targetProxy = C7C4ABF1B0867ED4E0B5D7D9 /* PBXContainerItemProxy */;
 		};
+		6C1581737135FB592DB8678D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA1C3CFCF2B3E27830DDDBC9 /* ShadowingWidget */;
+			targetProxy = 5DCD35BD79670E8F3BADD8CF /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		04517F3A8D7A3D7695011B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShadowingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp.Widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		2EA504A038A69F5435E55B0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -509,6 +614,25 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
+		};
+		3C4E9EF89B2A122C18A3D867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShadowingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp.Widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 		70A37D88727D4ECE9051FDD4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -654,6 +778,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7BB917D9F7EB11A1FF418A01 /* Build configuration list for PBXNativeTarget "ShadowingWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C4E9EF89B2A122C18A3D867 /* Debug */,
+				04517F3A8D7A3D7695011B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		8EFCD3F6FC69D500EE5CE429 /* Build configuration list for PBXNativeTarget "ShadowingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
