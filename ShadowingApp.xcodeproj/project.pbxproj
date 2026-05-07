@@ -11,6 +11,7 @@
 		074A4A42B4C77B1B290C4A0A /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02BAC2EAF51097A664D808 /* PlaylistsView.swift */; };
 		0CB89FF545D405A40522D1EA /* NowPlayingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */; };
 		1AC453D9BB47AB74F9322A96 /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3480AF515DC221A582B81 /* PlaybackState.swift */; };
+		1E2EEE2A5B992A176D72B99A /* ScrubberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DF2478B5384F2271CE452 /* ScrubberView.swift */; };
 		2BEC197CC38C6ABA8166A72E /* ShadowingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */; };
 		2C792C5F3FADC098417BEBB3 /* PlaybackStatePersisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE016E46F9CFE848220B34 /* PlaybackStatePersisting.swift */; };
 		32A1B945EDFF359ED4CDD423 /* AddToPlaylistSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */; };
@@ -69,6 +70,7 @@
 		13A7001E9309792DF86B2B7D /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSheet.swift; sourceTree = "<group>"; };
 		1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStoreTests.swift; sourceTree = "<group>"; };
+		1F0DF2478B5384F2271CE452 /* ScrubberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrubberView.swift; sourceTree = "<group>"; };
 		238F994839829652238D3AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2EC03C96B91D602D1A799C9B /* PlayerStoreResumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStoreResumeTests.swift; sourceTree = "<group>"; };
 		314444F48B3DB6A2B79E2336 /* FoldersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersSettingsView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D65016A9ADD86037B61AF3EF /* .gitkeep */,
 				018ED14221BC2166ED1B0303 /* MiniPlayerBar.swift */,
 				153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */,
+				1F0DF2478B5384F2271CE452 /* ScrubberView.swift */,
 			);
 			path = NowPlaying;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				074A4A42B4C77B1B290C4A0A /* PlaylistsView.swift in Sources */,
 				9CC33FEA7E8AE1A530D8A339 /* PreferencesStore.swift in Sources */,
 				72F013FA221E81C8676AD6D3 /* RootView.swift in Sources */,
+				1E2EEE2A5B992A176D72B99A /* ScrubberView.swift in Sources */,
 				2BEC197CC38C6ABA8166A72E /* ShadowingAppApp.swift in Sources */,
 				CFBEEB97AA8015CBFD2E3757 /* SwiftDataPlaybackPersistence.swift in Sources */,
 				D238E546F64BF42F9D8E2A65 /* Track.swift in Sources */,

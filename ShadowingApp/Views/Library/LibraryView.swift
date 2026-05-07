@@ -60,7 +60,7 @@ struct LibraryView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showSettings) { FoldersSettingsView() }
+            .sheet(isPresented: $showSettings, onDismiss: rescan) { FoldersSettingsView() }
             .sheet(isPresented: $showFirstPicker) {
                 DocumentPicker { url in
                     do {
