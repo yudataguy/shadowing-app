@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import Observation
+import WidgetKit
 
 @Observable
 @MainActor
@@ -105,6 +106,7 @@ final class PlayerStore {
     func playPlaylist(_ playlist: Playlist, tracks: [Track], fromIndex index: Int = 0) {
         guard !tracks.isEmpty else { return }
         playlist.lastPlayedAt = .now
+        WidgetCenter.shared.reloadAllTimelines()
         play(queue: tracks, startIndex: index)
     }
 
