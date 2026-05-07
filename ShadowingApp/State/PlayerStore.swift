@@ -168,7 +168,9 @@ final class PlayerStore {
             if let pick = unvisited.randomElement() { return pick }
             if preferences.loopMode == .playlist || forced {
                 shuffleHistory = []
-                return queue.indices.randomElement()
+                let candidates = Set(queue.indices).subtracting([currentIndex])
+                // If queue has only one track, just return it (loop behavior)
+                return candidates.randomElement() ?? currentIndex
             }
             return nil
         } else {
