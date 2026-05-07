@@ -14,10 +14,13 @@ final class PlayerStore {
     private(set) var queue: [Track] = []
     private(set) var currentIndex: Int = 0
     private(set) var isPlaying: Bool = false
+    private(set) var loopMode: LoopMode = .off
+    private(set) var shuffleEnabled: Bool = false
+    private(set) var playbackRate: Double = 1.0
 
     @ObservationIgnored private(set) var currentTime: TimeInterval = 0
     @ObservationIgnored private var shuffleHistory: Set<Int> = []
-    @ObservationIgnored private var currentDuration: TimeInterval = 0
+    @ObservationIgnored private(set) var currentDuration: TimeInterval = 0
 
     init(engine: PlayerEngine,
          preferences: PreferencesStore,
@@ -61,6 +64,10 @@ final class PlayerStore {
                 }
             }
             .store(in: &cancellables)
+
+        self.loopMode = preferences.loopMode
+        self.shuffleEnabled = preferences.shuffleEnabled
+        self.playbackRate = preferences.playbackRate
     }
 
     var currentTrack: Track? {
@@ -99,10 +106,18 @@ final class PlayerStore {
 
     func setRate(_ rate: Double) {
         preferences.playbackRate = rate
+        playbackRate = rate
         engine.setRate(rate)
     }
 
-    func setLoopMode(_ mode: LoopMode) { preferences.loopMode = mode }
+    func setLoopMode(_ mode: LoopMode) {
+        preferences.loopMode = mode
+        loopMode = mode
+    }
+
+    func seek(to time: TimeInterval) {
+        engine.seek(to: time)
+    }
 
     func skip(by seconds: TimeInterval) {
         let target: TimeInterval
@@ -116,6 +131,7 @@ final class PlayerStore {
 
     func toggleShuffle() {
         preferences.shuffleEnabled.toggle()
+        shuffleEnabled = preferences.shuffleEnabled
         shuffleHistory = [currentIndex]
     }
 
