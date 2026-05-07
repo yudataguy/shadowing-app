@@ -4,6 +4,7 @@ import SwiftData
 struct PlaylistsView: View {
     @Query(sort: \Playlist.createdAt, order: .reverse) private var playlists: [Playlist]
     @Environment(\.modelContext) private var modelContext
+    @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
     @State private var showNewSheet = false
 
     var body: some View {
@@ -32,6 +33,7 @@ struct PlaylistsView: View {
                                 modelContext.delete(playlists[offset])
                             }
                             try? modelContext.save()
+                            snapshotPublisher.publish()
                         }
                     }
                 }

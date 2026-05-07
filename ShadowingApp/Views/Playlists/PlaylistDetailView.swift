@@ -6,6 +6,7 @@ struct PlaylistDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var snapshot
     @Environment(PlayerStore.self) private var player
+    @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
     @State private var showRename = false
     @State private var renameText = ""
 
@@ -37,6 +38,7 @@ struct PlaylistDetailView: View {
                         onShuffle: {
                             playlist.lastPlayedAt = .now
                             try? modelContext.save()
+                            snapshotPublisher.publish()
                             player.playFolder(orderedTracks, shuffled: true)
                         }
                     )
@@ -65,6 +67,7 @@ struct PlaylistDetailView: View {
                 guard !trimmed.isEmpty else { return }
                 playlist.name = trimmed
                 try? modelContext.save()
+                snapshotPublisher.publish()
             }
         }
     }
@@ -76,6 +79,7 @@ struct PlaylistDetailView: View {
             entry.position = newPosition
         }
         try? modelContext.save()
+        snapshotPublisher.publish()
     }
 
     private func deleteTracks(at offsets: IndexSet) {
@@ -89,5 +93,6 @@ struct PlaylistDetailView: View {
             entry.position = idx
         }
         try? modelContext.save()
+        snapshotPublisher.publish()
     }
 }

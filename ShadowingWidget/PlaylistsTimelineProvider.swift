@@ -1,5 +1,4 @@
 import WidgetKit
-import SwiftData
 import Foundation
 
 struct PlaylistTimelineEntry: TimelineEntry {
@@ -41,17 +40,10 @@ struct PlaylistsTimelineProvider: TimelineProvider {
     }
 
     private func fetchTopPlaylists() throws -> [PlaylistSummary] {
-        let container = try AppGroup.makeSharedContainer()
-        let context = ModelContext(container)
-        let descriptor = FetchDescriptor<Playlist>(
-            sortBy: [
-                SortDescriptor(\.lastPlayedAt, order: .reverse),
-                SortDescriptor(\.createdAt, order: .reverse)
-            ]
-        )
-        let all = try context.fetch(descriptor)
-        return all.prefix(4).map {
-            PlaylistSummary(id: $0.id, name: $0.name, trackCount: $0.entries.count)
+        let defaults = UserDefaults(suiteName: AppGroup.identifier)
+        let snapshots = PlaylistSnapshotStore.read(from: defaults)
+        return snapshots.prefix(4).map {
+            PlaylistSummary(id: $0.id, name: $0.name, trackCount: $0.trackCount)
         }
     }
 }

@@ -5,6 +5,7 @@ struct AddToPlaylistSheet: View {
     let track: Track
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
     @Query(sort: \Playlist.createdAt, order: .reverse) private var playlists: [Playlist]
     @State private var showNewSheet = false
 
@@ -53,6 +54,7 @@ struct AddToPlaylistSheet: View {
         entry.playlist = playlist
         modelContext.insert(entry)
         try? modelContext.save()
+        snapshotPublisher.publish()
         dismiss()
     }
 }

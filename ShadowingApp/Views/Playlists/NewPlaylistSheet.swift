@@ -6,6 +6,7 @@ struct NewPlaylistSheet: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
     @State private var name: String = ""
 
     var body: some View {
@@ -27,6 +28,7 @@ struct NewPlaylistSheet: View {
                         let playlist = Playlist(name: trimmed)
                         modelContext.insert(playlist)
                         try? modelContext.save()
+                        snapshotPublisher.publish()
                         onCreate?(playlist)
                         dismiss()
                     }

@@ -59,9 +59,7 @@ targets:
       - path: ShadowingWidget
       - path: ShadowingApp/Intents/PlayPlaylistIntent.swift
       - path: ShadowingApp/Services/AppGroup.swift
-      - path: ShadowingApp/Models/Playlist.swift
-      - path: ShadowingApp/Models/PlaylistEntry.swift
-      - path: ShadowingApp/Models/PlaybackState.swift
+      - path: ShadowingApp/Services/PlaylistSnapshot.swift
     info:
       path: ShadowingWidget/Info.plist
       properties:
