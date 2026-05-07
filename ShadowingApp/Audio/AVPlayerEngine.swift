@@ -1,0 +1,58 @@
+import AVFoundation
+import Combine
+
+final class AVPlayerEngine: PlayerEngine {
+    private let player = AVPlayer()
+    private var timeObserver: Any?
+    private var cancellables = Set<AnyCancellable>()
+
+    private let isPlayingSubject = CurrentValueSubject<Bool, Never>(false)
+    private let currentTimeSubject = CurrentValueSubject<TimeInterval, Never>(0)
+    private let durationSubject = CurrentValueSubject<TimeInterval, Never>(0)
+    private let didFinishSubject = PassthroughSubject<Void, Never>()
+
+    var isPlayingPublisher: AnyPublisher<Bool, Never> { isPlayingSubject.eraseToAnyPublisher() }
+    var currentTimePublisher: AnyPublisher<TimeInterval, Never> { currentTimeSubject.eraseToAnyPublisher() }
+    var durationPublisher: AnyPublisher<TimeInterval, Never> { durationSubject.eraseToAnyPublisher() }
+    var didFinishPublisher: AnyPublisher<Void, Never> { didFinishSubject.eraseToAnyPublisher() }
+
+    init() {
+        timeObserver = player.addPeriodicTimeObserver(
+            forInterval: CMTime(seconds: 1, preferredTimescale: 600),
+            queue: .main
+        ) { [weak self] time in
+            self?.currentTimeSubject.send(time.seconds)
+        }
+        NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)
+            .sink { [weak self] _ in self?.didFinishSubject.send(()) }
+            .store(in: &cancellables)
+    }
+
+    func load(url: URL) {
+        let item = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: item)
+        Task { @MainActor in
+            let duration = (try? await item.asset.load(.duration).seconds) ?? 0
+            durationSubject.send(duration)
+        }
+    }
+
+    func play() {
+        player.play()
+        isPlayingSubject.send(true)
+    }
+
+    func pause() {
+        player.pause()
+        isPlayingSubject.send(false)
+    }
+
+    func seek(to time: TimeInterval) {
+        player.seek(to: CMTime(seconds: time, preferredTimescale: 600))
+    }
+
+    func setRate(_ rate: Double) {
+        player.rate = Float(rate)
+        isPlayingSubject.send(player.rate != 0)
+    }
+}
