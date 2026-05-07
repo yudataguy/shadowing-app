@@ -103,11 +103,10 @@ final class PlayerStore {
         play(queue: tracks, startIndex: shuffled ? Int.random(in: 0..<tracks.count) : 0)
     }
 
-    func playPlaylist(_ playlist: Playlist, tracks: [Track], fromIndex index: Int = 0) {
+    func playPlaylist(_ tracks: [Track]) {
         guard !tracks.isEmpty else { return }
-        playlist.lastPlayedAt = .now
         WidgetCenter.shared.reloadAllTimelines()
-        play(queue: tracks, startIndex: index)
+        play(queue: tracks, startIndex: 0)
     }
 
     func togglePlayPause() {

@@ -6,6 +6,7 @@ struct RootView: View {
     @Environment(PlayerStore.self) private var player
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var librarySnapshot
+    @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
@@ -52,7 +53,10 @@ struct RootView: View {
                     librarySnapshot.track(forStableID: $0.trackStableID)
                 }
                 guard !tracks.isEmpty else { return }
-                player.playPlaylist(playlist, tracks: tracks, fromIndex: 0)
+                playlist.lastPlayedAt = .now
+                try? modelContext.save()
+                snapshotPublisher.publish()
+                player.playPlaylist(tracks)
             }
         )
         handoff.handle()

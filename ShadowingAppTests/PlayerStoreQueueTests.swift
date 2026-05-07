@@ -76,23 +76,11 @@ final class PlayerStoreQueueTests: XCTestCase {
         XCTAssertEqual(visited.count, 4)
     }
 
-    func test_playPlaylist_updatesLastPlayedAt() async throws {
-        let schema = Schema([Playlist.self, PlaylistEntry.self, PlaybackState.self])
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: schema, configurations: [config])
-        let context = container.mainContext
-
-        let playlist = Playlist(name: "Test")
-        context.insert(playlist)
-        try context.save()
-
-        let track = Track(folderID: UUID(),
-                          relativePath: "x.mp3",
-                          url: URL(fileURLWithPath: "/tmp/x.mp3"))
-
-        XCTAssertNil(playlist.lastPlayedAt)
-        store.playPlaylist(playlist, tracks: [track], fromIndex: 0)
-        XCTAssertNotNil(playlist.lastPlayedAt)
+    func test_playPlaylist_loadsTracks() {
+        let tracks = makeQueue(3)
+        store.playPlaylist(tracks)
+        XCTAssertEqual(engine.loadedURLs.count, 1)
+        XCTAssertEqual(engine.didCallPlay, 1)
     }
 }
 

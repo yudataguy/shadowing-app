@@ -33,7 +33,10 @@ struct PlaylistDetailView: View {
                     FolderSectionHeader(
                         folderName: playlist.name,
                         onPlay: {
-                            player.playPlaylist(playlist, tracks: orderedTracks, fromIndex: 0)
+                            playlist.lastPlayedAt = .now
+                            try? modelContext.save()
+                            snapshotPublisher.publish()
+                            player.playPlaylist(orderedTracks)
                         },
                         onShuffle: {
                             playlist.lastPlayedAt = .now
