@@ -1,8 +1,11 @@
 import SwiftUI
+import SwiftData
 
 struct RootView: View {
     @State private var showNowPlaying = false
     @Environment(PlayerStore.self) private var player
+    @Environment(\.modelContext) private var modelContext
+    @Environment(LibrarySnapshot.self) private var librarySnapshot
 
     var body: some View {
         TabView {
@@ -26,6 +29,27 @@ struct RootView: View {
         } message: { error in
             Text(error)
         }
+        .task { handleWidgetHandoff() }
+    }
+
+    private func handleWidgetHandoff() {
+        let handoff = WidgetHandoff(
+            defaults: UserDefaults(suiteName: AppGroup.identifier),
+            lookupAndPlay: { idString in
+                guard let uuid = UUID(uuidString: idString) else { return }
+                let descriptor = FetchDescriptor<Playlist>(
+                    predicate: #Predicate { $0.id == uuid }
+                )
+                guard let playlist = try? modelContext.fetch(descriptor).first else { return }
+                let entries = playlist.entries.sorted { $0.position < $1.position }
+                let tracks = entries.compactMap {
+                    librarySnapshot.track(forStableID: $0.trackStableID)
+                }
+                guard !tracks.isEmpty else { return }
+                player.playPlaylist(playlist, tracks: tracks, fromIndex: 0)
+            }
+        )
+        handoff.handle()
     }
 }
 

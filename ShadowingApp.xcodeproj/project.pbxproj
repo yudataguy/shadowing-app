@@ -21,11 +21,13 @@
 		3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */; };
 		3CFA5B10EBFA7D9CD4F2E05C /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853A3C1AA6BCFC7D937082 /* PlaylistDetailView.swift */; };
 		3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7D6E60891A5E434642DF56 /* Assets.xcassets */; };
+		41F07753EDDECA7114EF734B /* WidgetHandoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64326E1883F9B602EC07F7C2 /* WidgetHandoffTests.swift */; };
 		42D04352FE4266D34B465B27 /* LibraryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37918FF1D1721975C40385BD /* LibraryServiceTests.swift */; };
 		45DE2761EE2F42102F564262 /* PlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D7E7AA5FF64F8F0D905E34 /* PlayerEngine.swift */; };
 		46F66C9A10907ECFDD7DE88A /* AudioSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC612E7D9FE039A0D838DC9C /* AudioSessionCoordinator.swift */; };
 		537913CAB4DEFFDFD479A486 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		543CE4B4BE6B6828CD551FE5 /* NewPlaylistSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC527BD551A5EC737C4C6E3E /* NewPlaylistSheet.swift */; };
+		64C3BD22EE54BF22A5C443C1 /* WidgetHandoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */; };
 		6DD139C83DFC10DD3484FD9D /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC6A60E548AAA41D35074 /* AppGroup.swift */; };
 		6E5D703082E9606F4EB300C6 /* BookmarkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */; };
 		72F013FA221E81C8676AD6D3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE025F87AD364699EF0C2DB8 /* RootView.swift */; };
@@ -87,6 +89,8 @@
 		58D51F486911CCE5BB8E562C /* LoopMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopMode.swift; sourceTree = "<group>"; };
 		5D9ECACD95DC54AEADA2E3F9 /* PreferencesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStoreTests.swift; sourceTree = "<group>"; };
 		5E7F499B60997B6359A6FBDD /* PlayPlaylistIntentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPlaylistIntentTests.swift; sourceTree = "<group>"; };
+		64326E1883F9B602EC07F7C2 /* WidgetHandoffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHandoffTests.swift; sourceTree = "<group>"; };
+		6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHandoff.swift; sourceTree = "<group>"; };
 		68C9A976CAD480D58B1F6989 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		6C02BAC2EAF51097A664D808 /* PlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
 		70BDA7A13418672E88477EF7 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				5D9ECACD95DC54AEADA2E3F9 /* PreferencesStoreTests.swift */,
 				FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */,
 				AA417C390BED0F79E4C6A25D /* TrackTests.swift */,
+				64326E1883F9B602EC07F7C2 /* WidgetHandoffTests.swift */,
 				86FD3B2CCD78A2DB1D1E44AB /* Fakes */,
 			);
 			path = ShadowingAppTests;
@@ -248,6 +253,7 @@
 				71B6F0BBEE36BD015CDACDF4 /* LibrarySnapshot.swift */,
 				F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */,
 				9DE8F2D89415DD7C6912A4BE /* SwiftDataPlaybackPersistence.swift */,
+				6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				05629FCD80CA9F4DF7929882 /* PreferencesStoreTests.swift in Sources */,
 				3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */,
 				D88B89B87DCC02624D6F5F58 /* TrackTests.swift in Sources */,
+				41F07753EDDECA7114EF734B /* WidgetHandoffTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +439,7 @@
 				CFBEEB97AA8015CBFD2E3757 /* SwiftDataPlaybackPersistence.swift in Sources */,
 				D238E546F64BF42F9D8E2A65 /* Track.swift in Sources */,
 				8804E34B200EE70F638C60C0 /* TrackRow.swift in Sources */,
+				64C3BD22EE54BF22A5C443C1 /* WidgetHandoff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
