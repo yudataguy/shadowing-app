@@ -18,9 +18,9 @@ final class PlayerStore {
     private(set) var shuffleEnabled: Bool = false
     private(set) var playbackRate: Double = 1.0
 
-    @ObservationIgnored private(set) var currentTime: TimeInterval = 0
+    private(set) var currentTime: TimeInterval = 0
     @ObservationIgnored private var shuffleHistory: Set<Int> = []
-    @ObservationIgnored private(set) var currentDuration: TimeInterval = 0
+    private(set) var currentDuration: TimeInterval = 0
 
     init(engine: PlayerEngine,
          preferences: PreferencesStore,
