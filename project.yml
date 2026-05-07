@@ -1,0 +1,47 @@
+name: ShadowingApp
+options:
+  bundleIdPrefix: com.yudataguy
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+targets:
+  ShadowingApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: ShadowingApp
+    scheme:
+      testTargets:
+        - ShadowingAppTests
+      gatherCoverageData: false
+    info:
+      path: ShadowingApp/Info.plist
+      properties:
+        UIBackgroundModes:
+          - audio
+        UILaunchScreen:
+          UIColorName: ""
+        CFBundleDisplayName: Shadowing
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yudataguy.ShadowingApp
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MACCATALYST: "NO"
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+        GENERATE_INFOPLIST_FILE: "NO"
+        CODE_SIGN_STYLE: Automatic
+
+  ShadowingAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ShadowingAppTests
+    dependencies:
+      - target: ShadowingApp
+    settings:
+      base:
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/ShadowingApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShadowingApp
