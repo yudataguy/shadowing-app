@@ -5,27 +5,20 @@ struct PlaylistsWidget: Widget {
     let kind = "PlaylistsWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: PlaceholderProvider()) { _ in
-            Text("Shadowing — placeholder")
-                .containerBackground(for: .widget) { Color.indigo }
+        StaticConfiguration(kind: kind, provider: PlaylistsTimelineProvider()) { entry in
+            PlaylistsWidgetView(entry: entry)
         }
         .configurationDisplayName("Shadowing Playlists")
-        .description("Quickly play a playlist.")
+        .description("Quickly play a recent playlist.")
         .supportedFamilies([.systemMedium])
     }
 }
 
-private struct PlaceholderProvider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry { SimpleEntry(date: .now) }
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        completion(SimpleEntry(date: .now))
+// Temporary stub — Task 7 replaces this with the real grid view in its own file.
+struct PlaylistsWidgetView: View {
+    let entry: PlaylistTimelineEntry
+    var body: some View {
+        Text(entry.playlists.first?.name ?? "Empty")
+            .containerBackground(for: .widget) { Color.indigo }
     }
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        completion(Timeline(entries: [SimpleEntry(date: .now)],
-                            policy: .after(.now.addingTimeInterval(900))))
-    }
-}
-
-private struct SimpleEntry: TimelineEntry {
-    let date: Date
 }
