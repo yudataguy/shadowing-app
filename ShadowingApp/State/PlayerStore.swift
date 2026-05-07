@@ -102,6 +102,12 @@ final class PlayerStore {
         play(queue: tracks, startIndex: shuffled ? Int.random(in: 0..<tracks.count) : 0)
     }
 
+    func playPlaylist(_ playlist: Playlist, tracks: [Track], fromIndex index: Int = 0) {
+        guard !tracks.isEmpty else { return }
+        playlist.lastPlayedAt = .now
+        play(queue: tracks, startIndex: index)
+    }
+
     func togglePlayPause() {
         isPlaying ? engine.pause() : engine.play()
     }

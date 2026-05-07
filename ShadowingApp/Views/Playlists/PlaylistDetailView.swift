@@ -31,8 +31,14 @@ struct PlaylistDetailView: View {
                 } header: {
                     FolderSectionHeader(
                         folderName: playlist.name,
-                        onPlay: { player.playFolder(orderedTracks, shuffled: false) },
-                        onShuffle: { player.playFolder(orderedTracks, shuffled: true) }
+                        onPlay: {
+                            player.playPlaylist(playlist, tracks: orderedTracks, fromIndex: 0)
+                        },
+                        onShuffle: {
+                            playlist.lastPlayedAt = .now
+                            try? modelContext.save()
+                            player.playFolder(orderedTracks, shuffled: true)
+                        }
                     )
                 }
             }
