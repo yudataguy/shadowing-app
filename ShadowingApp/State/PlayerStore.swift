@@ -15,6 +15,7 @@ final class PlayerStore {
     private(set) var isPlaying: Bool = false
 
     @ObservationIgnored private var shuffleHistory: Set<Int> = []
+    @ObservationIgnored private var currentDuration: TimeInterval = 0
 
     init(engine: PlayerEngine, preferences: PreferencesStore, persistence: PlaybackStatePersisting) {
         self.engine = engine
@@ -29,6 +30,21 @@ final class PlayerStore {
         engine.isPlayingPublisher
             .sink { [weak self] value in
                 MainActor.assumeIsolated { self?.isPlaying = value }
+            }
+            .store(in: &cancellables)
+        engine.durationPublisher
+            .sink { [weak self] value in
+                MainActor.assumeIsolated { self?.currentDuration = value }
+            }
+            .store(in: &cancellables)
+        engine.currentTimePublisher
+            .throttle(for: .seconds(1), scheduler: RunLoop.main, latest: true)
+            .sink { [weak self] time in
+                guard let self else { return }
+                MainActor.assumeIsolated {
+                    guard let track = self.currentTrack else { return }
+                    self.persistence.savePosition(time, for: track.stableID)
+                }
             }
             .store(in: &cancellables)
     }
@@ -113,7 +129,10 @@ final class PlayerStore {
         engine.load(url: track.url)
         engine.setRate(preferences.playbackRate)
         if let last = persistence.lastPosition(for: track.stableID) {
-            engine.seek(to: last)
+            let duration = currentDuration
+            if duration <= 0 || last < duration - 5 {
+                engine.seek(to: last)
+            }
         }
         engine.play()
     }
