@@ -55,12 +55,19 @@ final class PlayerStore {
             }
             .store(in: &cancellables)
         engine.currentTimePublisher
+            .compactMap { [weak self] time -> (String, TimeInterval)? in
+                // The currentTimePublisher delivers on main; the closure runs on main.
+                // Capture stableID synchronously here, BEFORE the throttle defers delivery.
+                guard let self else { return nil }
+                return MainActor.assumeIsolated {
+                    guard let track = self.currentTrack else { return nil }
+                    return (track.stableID, time)
+                }
+            }
             .throttle(for: .seconds(1), scheduler: RunLoop.main, latest: true)
-            .sink { [weak self] time in
-                guard let self else { return }
+            .sink { [weak self] stableID, time in
                 MainActor.assumeIsolated {
-                    guard let track = self.currentTrack else { return }
-                    self.persistence.savePosition(time, for: track.stableID)
+                    self?.persistence.savePosition(time, for: stableID)
                 }
             }
             .store(in: &cancellables)
