@@ -60,6 +60,11 @@ struct LibraryView: View {
                         Image(systemName: "gear")
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { rescan() } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                }
             }
             .sheet(isPresented: $showSettings, onDismiss: rescan) { FoldersSettingsView() }
             .sheet(isPresented: $showFirstPicker) {
