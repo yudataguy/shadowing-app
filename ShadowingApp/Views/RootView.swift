@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UIKit
 
 struct RootView: View {
     @State private var showNowPlaying = false
@@ -7,7 +8,6 @@ struct RootView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var librarySnapshot
     @Environment(PlaylistSnapshotPublisher.self) private var snapshotPublisher
-    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         TabView {
@@ -32,10 +32,8 @@ struct RootView: View {
             Text(error)
         }
         .task { handleWidgetHandoff() }
-        .onChange(of: scenePhase) { _, newPhase in
-            if newPhase == .active {
-                handleWidgetHandoff()
-            }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            handleWidgetHandoff()
         }
     }
 
