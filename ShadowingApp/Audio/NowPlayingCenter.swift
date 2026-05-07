@@ -8,6 +8,7 @@ final class NowPlayingCenter {
         info[MPMediaItemPropertyPlaybackDuration] = duration
         info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = elapsed
         info[MPNowPlayingInfoPropertyPlaybackRate] = rate
+        info[MPNowPlayingInfoPropertyDefaultPlaybackRate] = 1.0
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
 
