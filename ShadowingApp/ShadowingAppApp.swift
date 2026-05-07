@@ -11,9 +11,9 @@ struct ShadowingAppApp: App {
     init() {
         let container: ModelContainer
         do {
-            container = try ModelContainer(for: Playlist.self, PlaylistEntry.self, PlaybackState.self)
+            container = try AppGroup.makeSharedContainer()
         } catch {
-            fatalError("Failed to create model container: \(error)")
+            fatalError("Failed to create shared model container: \(error)")
         }
         self.modelContainer = container
 
