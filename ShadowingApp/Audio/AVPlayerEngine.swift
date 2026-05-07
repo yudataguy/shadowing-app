@@ -11,10 +11,18 @@ final class AVPlayerEngine: PlayerEngine {
     private let durationSubject = CurrentValueSubject<TimeInterval, Never>(0)
     private let didFinishSubject = PassthroughSubject<Void, Never>()
 
-    var isPlayingPublisher: AnyPublisher<Bool, Never> { isPlayingSubject.eraseToAnyPublisher() }
-    var currentTimePublisher: AnyPublisher<TimeInterval, Never> { currentTimeSubject.eraseToAnyPublisher() }
-    var durationPublisher: AnyPublisher<TimeInterval, Never> { durationSubject.eraseToAnyPublisher() }
-    var didFinishPublisher: AnyPublisher<Void, Never> { didFinishSubject.eraseToAnyPublisher() }
+    var isPlayingPublisher: AnyPublisher<Bool, Never> {
+        isPlayingSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    var currentTimePublisher: AnyPublisher<TimeInterval, Never> {
+        currentTimeSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    var durationPublisher: AnyPublisher<TimeInterval, Never> {
+        durationSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
+    var didFinishPublisher: AnyPublisher<Void, Never> {
+        didFinishSubject.receive(on: DispatchQueue.main).eraseToAnyPublisher()
+    }
 
     init() {
         timeObserver = player.addPeriodicTimeObserver(
