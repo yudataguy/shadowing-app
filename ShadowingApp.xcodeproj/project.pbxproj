@@ -11,7 +11,9 @@
 		2BEC197CC38C6ABA8166A72E /* ShadowingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */; };
 		3865ACEA44A0EC9AD2FF3064 /* FolderBookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED21FECAE78163A0F09682 /* FolderBookmark.swift */; };
 		3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */; };
+		6E5D703082E9606F4EB300C6 /* BookmarkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */; };
 		77DD8618EE43B9492271FA03 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C9A976CAD480D58B1F6989 /* Playlist.swift */; };
+		7C63142AE4DEE17B398A1169 /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */; };
 		8B2B82D6ACB167EAD4EF4447 /* PlaylistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */; };
 		B8BFE38287D7C531A7F32E60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881761D573029AC81920E18 /* ContentView.swift */; };
 		D238E546F64BF42F9D8E2A65 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8479BAEAB28CB2736F7CF /* Track.swift */; };
@@ -33,6 +35,7 @@
 		03C37934D1A7E1E68003FB38 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		0702EB5784B795D2FFAE3612 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		13A7001E9309792DF86B2B7D /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStoreTests.swift; sourceTree = "<group>"; };
 		238F994839829652238D3AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A20790FBEFB1D3301080955 /* ShadowingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ShadowingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C11BB0E55305C2B41BE9DAA /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		ACE8479BAEAB28CB2736F7CF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
 		E385B73864146DF6E34D59BB /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistEntry.swift; sourceTree = "<group>"; };
 		E7ED21FECAE78163A0F09682 /* FolderBookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderBookmark.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		73B2BD7AC229C0C6FA6C029B /* ShadowingAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */,
 				FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */,
 				AA417C390BED0F79E4C6A25D /* TrackTests.swift */,
 			);
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				0702EB5784B795D2FFAE3612 /* .gitkeep */,
+				DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5D703082E9606F4EB300C6 /* BookmarkStoreTests.swift in Sources */,
 				3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */,
 				D88B89B87DCC02624D6F5F58 /* TrackTests.swift in Sources */,
 			);
@@ -260,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C63142AE4DEE17B398A1169 /* BookmarkStore.swift in Sources */,
 				B8BFE38287D7C531A7F32E60 /* ContentView.swift in Sources */,
 				3865ACEA44A0EC9AD2FF3064 /* FolderBookmark.swift in Sources */,
 				1AC453D9BB47AB74F9322A96 /* PlaybackState.swift in Sources */,
