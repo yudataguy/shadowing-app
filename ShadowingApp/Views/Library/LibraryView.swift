@@ -7,6 +7,7 @@ struct LibraryView: View {
     @State private var sections: [LibrarySection] = []
     @State private var showSettings = false
     @State private var showFirstPicker = false
+    @State private var activeScopedURLs: [UUID: URL] = [:]   // bookmark id → currently-accessed URL
 
     struct LibrarySection: Identifiable {
         let id: UUID            // folderID
@@ -76,14 +77,21 @@ struct LibraryView: View {
 
     private func rescan() {
         var newSections: [LibrarySection] = []
+        var newActiveURLs: [UUID: URL] = [:]
+
         for bookmark in bookmarks.all() {
             guard let resolved = bookmarks.resolve(bookmark) else { continue }
-            _ = resolved.url.startAccessingSecurityScopedResource()
+
+            // If we already have access to this exact URL, reuse it (don't double-start).
+            if activeScopedURLs[bookmark.id] != resolved.url {
+                // Stop the old one if any (e.g., bookmark was re-resolved to a different URL).
+                activeScopedURLs[bookmark.id]?.stopAccessingSecurityScopedResource()
+                _ = resolved.url.startAccessingSecurityScopedResource()
+            }
+            newActiveURLs[bookmark.id] = resolved.url
+
             let tracks = LibraryService.scan(rootURL: resolved.url, folderID: bookmark.id)
                 .sorted { $0.relativePath.localizedStandardCompare($1.relativePath) == .orderedAscending }
-            // Note: we deliberately keep the security-scoped access alive for the duration of the
-            // app session — the URLs in `tracks` need to remain readable when AVPlayer loads them.
-            // We do NOT call stopAccessingSecurityScopedResource() here.
             if !tracks.isEmpty {
                 newSections.append(LibrarySection(
                     id: bookmark.id,
@@ -92,6 +100,13 @@ struct LibraryView: View {
                 ))
             }
         }
+
+        // Stop access on bookmarks that have been removed since the last scan.
+        for (id, url) in activeScopedURLs where newActiveURLs[id] == nil {
+            url.stopAccessingSecurityScopedResource()
+        }
+
+        activeScopedURLs = newActiveURLs
         sections = newSections
         librarySnapshot.update(newSections.flatMap(\.tracks))
     }
