@@ -51,6 +51,7 @@ struct LibraryView: View {
                         }
                     }
                     .listStyle(.plain)
+                    .refreshable { rescan() }
                 }
             }
             .navigationTitle("Library")
