@@ -13,12 +13,3 @@ struct PlaylistsWidget: Widget {
         .supportedFamilies([.systemMedium])
     }
 }
-
-// Temporary stub — Task 7 replaces this with the real grid view in its own file.
-struct PlaylistsWidgetView: View {
-    let entry: PlaylistTimelineEntry
-    var body: some View {
-        Text(entry.playlists.first?.name ?? "Empty")
-            .containerBackground(for: .widget) { Color.indigo }
-    }
-}

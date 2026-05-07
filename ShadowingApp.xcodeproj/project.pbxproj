@@ -31,6 +31,7 @@
 		537913CAB4DEFFDFD479A486 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		543CE4B4BE6B6828CD551FE5 /* NewPlaylistSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC527BD551A5EC737C4C6E3E /* NewPlaylistSheet.swift */; };
 		5599935D5B7FFE043F44BC5E /* PlaylistsTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */; };
+		5E34CDE8982C2EB81C065740 /* PlaylistsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6ABF647B84E7A0FC154B05 /* PlaylistsWidgetView.swift */; };
 		64C3BD22EE54BF22A5C443C1 /* WidgetHandoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6847D8424F009FD7E5B50511 /* WidgetHandoff.swift */; };
 		6DD139C83DFC10DD3484FD9D /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC6A60E548AAA41D35074 /* AppGroup.swift */; };
 		6E5D703082E9606F4EB300C6 /* BookmarkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */; };
@@ -145,6 +146,7 @@
 		CE025F87AD364699EF0C2DB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShadowingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		DB6ABF647B84E7A0FC154B05 /* PlaylistsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidgetView.swift; sourceTree = "<group>"; };
 		DE91025AF02EDBDCC6C71A74 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
 		E385B73864146DF6E34D59BB /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		E604E843664305FA125A76D8 /* FolderSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSectionHeader.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				6FDBFA4F1312B312FEAF3FBB /* Info.plist */,
 				6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */,
 				C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */,
+				DB6ABF647B84E7A0FC154B05 /* PlaylistsWidgetView.swift */,
 				3D73D6B1C74113EC86DE73C4 /* ShadowingWidget.entitlements */,
 				66A674582863E61CD3A70804 /* ShadowingWidgetBundle.swift */,
 			);
@@ -466,6 +469,7 @@
 				4B7B08307E942496EB753B60 /* PlaylistEntry.swift in Sources */,
 				5599935D5B7FFE043F44BC5E /* PlaylistsTimelineProvider.swift in Sources */,
 				367BAFFDDC9CF1501ACFC95D /* PlaylistsWidget.swift in Sources */,
+				5E34CDE8982C2EB81C065740 /* PlaylistsWidgetView.swift in Sources */,
 				F0DFFDF572CE9939B5B6C240 /* ShadowingWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
