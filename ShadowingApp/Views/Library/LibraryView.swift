@@ -3,6 +3,7 @@ import SwiftUI
 struct LibraryView: View {
     @Environment(BookmarkStore.self) private var bookmarks
     @Environment(PlayerStore.self) private var player
+    @Environment(LibrarySnapshot.self) private var librarySnapshot
     @State private var sections: [LibrarySection] = []
     @State private var showSettings = false
     @State private var showFirstPicker = false
@@ -92,5 +93,6 @@ struct LibraryView: View {
             }
         }
         sections = newSections
+        librarySnapshot.update(newSections.flatMap(\.tracks))
     }
 }

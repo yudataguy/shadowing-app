@@ -5,6 +5,7 @@ import SwiftData
 struct ShadowingAppApp: App {
     @State private var playerStore: PlayerStore
     private let bookmarks = BookmarkStore()
+    private let librarySnapshot = LibrarySnapshot()
     let modelContainer: ModelContainer
 
     init() {
@@ -31,6 +32,7 @@ struct ShadowingAppApp: App {
             RootView()
                 .environment(playerStore)
                 .environment(bookmarks)
+                .environment(librarySnapshot)
         }
         .modelContainer(modelContainer)
     }
