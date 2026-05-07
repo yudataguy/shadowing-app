@@ -5,6 +5,7 @@ final class AVPlayerEngine: PlayerEngine {
     private let player = AVPlayer()
     private var timeObserver: Any?
     private var cancellables = Set<AnyCancellable>()
+    private var desiredRate: Float = 1.0
 
     private let isPlayingSubject = CurrentValueSubject<Bool, Never>(false)
     private let currentTimeSubject = CurrentValueSubject<TimeInterval, Never>(0)
@@ -46,7 +47,7 @@ final class AVPlayerEngine: PlayerEngine {
     }
 
     func play() {
-        player.play()
+        player.rate = desiredRate
         isPlayingSubject.send(true)
     }
 
@@ -60,7 +61,12 @@ final class AVPlayerEngine: PlayerEngine {
     }
 
     func setRate(_ rate: Double) {
-        player.rate = Float(rate)
+        desiredRate = Float(rate)
+        if player.rate != 0 {
+            // Currently playing — apply immediately.
+            player.rate = desiredRate
+        }
+        // If paused, the rate will be applied on the next play().
         isPlayingSubject.send(player.rate != 0)
     }
 }
