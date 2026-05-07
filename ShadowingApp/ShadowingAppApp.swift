@@ -30,6 +30,7 @@ struct ShadowingAppApp: App {
         WindowGroup {
             RootView()
                 .environment(playerStore)
+                .environment(bookmarks)
         }
         .modelContainer(modelContainer)
     }

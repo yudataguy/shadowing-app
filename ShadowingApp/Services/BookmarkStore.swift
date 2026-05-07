@@ -1,8 +1,10 @@
 import Foundation
+import Observation
 
+@Observable
 final class BookmarkStore {
-    private let defaults: UserDefaults
-    private let key = "folderBookmarks.v1"
+    @ObservationIgnored private let defaults: UserDefaults
+    @ObservationIgnored private let key = "folderBookmarks.v1"
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -30,5 +32,23 @@ final class BookmarkStore {
     private func save(_ bookmarks: [FolderBookmark]) {
         let data = try? JSONEncoder().encode(bookmarks)
         defaults.set(data, forKey: key)
+    }
+}
+
+extension BookmarkStore {
+    func makeBookmark(from url: URL, displayName: String) throws -> FolderBookmark {
+        let data = try url.bookmarkData(options: [], includingResourceValuesForKeys: nil, relativeTo: nil)
+        return FolderBookmark(id: UUID(), displayName: displayName, bookmarkData: data)
+    }
+
+    func resolve(_ bookmark: FolderBookmark) -> (url: URL, isStale: Bool)? {
+        var stale = false
+        guard let url = try? URL(
+            resolvingBookmarkData: bookmark.bookmarkData,
+            options: [],
+            relativeTo: nil,
+            bookmarkDataIsStale: &stale
+        ) else { return nil }
+        return (url, stale)
     }
 }
