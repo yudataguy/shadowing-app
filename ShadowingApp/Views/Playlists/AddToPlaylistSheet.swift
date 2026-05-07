@@ -37,7 +37,11 @@ struct AddToPlaylistSheet: View {
                     Button("Cancel") { dismiss() }
                 }
             }
-            .sheet(isPresented: $showNewSheet) { NewPlaylistSheet() }
+            .sheet(isPresented: $showNewSheet) {
+                NewPlaylistSheet { newPlaylist in
+                    addToPlaylist(newPlaylist)
+                }
+            }
         }
     }
 

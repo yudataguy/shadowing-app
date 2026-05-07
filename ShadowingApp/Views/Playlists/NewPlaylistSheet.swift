@@ -2,6 +2,8 @@ import SwiftUI
 import SwiftData
 
 struct NewPlaylistSheet: View {
+    var onCreate: ((Playlist) -> Void)? = nil
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @State private var name: String = ""
@@ -22,8 +24,10 @@ struct NewPlaylistSheet: View {
                     Button("Save") {
                         let trimmed = name.trimmingCharacters(in: .whitespaces)
                         guard !trimmed.isEmpty else { return }
-                        modelContext.insert(Playlist(name: trimmed))
+                        let playlist = Playlist(name: trimmed)
+                        modelContext.insert(playlist)
                         try? modelContext.save()
+                        onCreate?(playlist)
                         dismiss()
                     }
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
