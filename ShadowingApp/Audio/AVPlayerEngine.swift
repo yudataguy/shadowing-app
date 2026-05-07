@@ -30,11 +30,19 @@ final class AVPlayerEngine: PlayerEngine {
             forInterval: CMTime(seconds: 1, preferredTimescale: 600),
             queue: .main
         ) { [weak self] time in
-            self?.currentTimeSubject.send(time.seconds)
+            let seconds = time.seconds
+            guard seconds.isFinite else { return }
+            self?.currentTimeSubject.send(seconds)
         }
         NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)
             .sink { [weak self] _ in self?.didFinishSubject.send(()) }
             .store(in: &cancellables)
+    }
+
+    deinit {
+        if let timeObserver {
+            player.removeTimeObserver(timeObserver)
+        }
     }
 
     func load(url: URL) {
