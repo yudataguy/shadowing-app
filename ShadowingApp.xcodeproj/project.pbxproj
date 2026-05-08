@@ -50,6 +50,7 @@
 		8E87F06CE06F82A12EA9AC3B /* FavoritePlaylistWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */; };
 		92D0C7955C06FE475F982464 /* LoopMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D51F486911CCE5BB8E562C /* LoopMode.swift */; };
 		95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
+		98D4CD97E18F7C4FB7F14F76 /* FavoritePlaylistWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197C508F6B33CE30C57780D8 /* FavoritePlaylistWidget.swift */; };
 		9BBCBA85CCDEF34408953CAA /* PlayerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCE253BC6FF95A3059DAFD /* PlayerStore.swift */; };
 		9C15136B308759AC2319D1BA /* PlaylistSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */; };
 		9CC33FEA7E8AE1A530D8A339 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */; };
@@ -116,6 +117,7 @@
 		110C4AC608AF0209A1840688 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
 		13A7001E9309792DF86B2B7D /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		153B88C85D1487D1E18F8BA1 /* NowPlayingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSheet.swift; sourceTree = "<group>"; };
+		197C508F6B33CE30C57780D8 /* FavoritePlaylistWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaylistWidget.swift; sourceTree = "<group>"; };
 		1D780AA52B69F6CE5E574150 /* BookmarkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStoreTests.swift; sourceTree = "<group>"; };
 		1F0DF2478B5384F2271CE452 /* ScrubberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrubberView.swift; sourceTree = "<group>"; };
 		238F994839829652238D3AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B98A2CAB1B064CD1C9DA90 /* FavoritePlaylistTimelineProvider.swift */,
+				197C508F6B33CE30C57780D8 /* FavoritePlaylistWidget.swift */,
 				B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */,
 				6FDBFA4F1312B312FEAF3FBB /* Info.plist */,
 				6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */,
@@ -491,6 +494,7 @@
 			files = (
 				0D767873BDA39BDD692DB4AC /* AppGroup.swift in Sources */,
 				3E5C90593658843A237D826E /* FavoritePlaylistTimelineProvider.swift in Sources */,
+				98D4CD97E18F7C4FB7F14F76 /* FavoritePlaylistWidget.swift in Sources */,
 				8E87F06CE06F82A12EA9AC3B /* FavoritePlaylistWidgetView.swift in Sources */,
 				95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */,
 				BA6C1D84E9C5B532EC7CF89D /* PlaylistEntity.swift in Sources */,

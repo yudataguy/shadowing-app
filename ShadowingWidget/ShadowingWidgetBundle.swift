@@ -5,5 +5,6 @@ import SwiftUI
 struct ShadowingWidgetBundle: WidgetBundle {
     var body: some Widget {
         PlaylistsWidget()
+        FavoritePlaylistWidget()
     }
 }
