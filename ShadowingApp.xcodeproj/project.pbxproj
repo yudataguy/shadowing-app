@@ -47,6 +47,7 @@
 		87ED6EEAE3E02BE0635F60FC /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ED14221BC2166ED1B0303 /* MiniPlayerBar.swift */; };
 		8804E34B200EE70F638C60C0 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C4AC608AF0209A1840688 /* TrackRow.swift */; };
 		8B2B82D6ACB167EAD4EF4447 /* PlaylistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */; };
+		8E87F06CE06F82A12EA9AC3B /* FavoritePlaylistWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */; };
 		92D0C7955C06FE475F982464 /* LoopMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D51F486911CCE5BB8E562C /* LoopMode.swift */; };
 		95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		9BBCBA85CCDEF34408953CAA /* PlayerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCE253BC6FF95A3059DAFD /* PlayerStore.swift */; };
@@ -153,6 +154,7 @@
 		AA417C390BED0F79E4C6A25D /* TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTests.swift; sourceTree = "<group>"; };
 		ACE8479BAEAB28CB2736F7CF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AFA3F40C6C561B344CE3EEB7 /* ShadowingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowingApp.entitlements; sourceTree = "<group>"; };
+		B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaylistWidgetView.swift; sourceTree = "<group>"; };
 		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSnapshot.swift; sourceTree = "<group>"; };
 		C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidget.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B98A2CAB1B064CD1C9DA90 /* FavoritePlaylistTimelineProvider.swift */,
+				B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */,
 				6FDBFA4F1312B312FEAF3FBB /* Info.plist */,
 				6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */,
 				C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */,
@@ -488,6 +491,7 @@
 			files = (
 				0D767873BDA39BDD692DB4AC /* AppGroup.swift in Sources */,
 				3E5C90593658843A237D826E /* FavoritePlaylistTimelineProvider.swift in Sources */,
+				8E87F06CE06F82A12EA9AC3B /* FavoritePlaylistWidgetView.swift in Sources */,
 				95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */,
 				BA6C1D84E9C5B532EC7CF89D /* PlaylistEntity.swift in Sources */,
 				9C15136B308759AC2319D1BA /* PlaylistSnapshot.swift in Sources */,
