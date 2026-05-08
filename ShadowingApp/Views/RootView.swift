@@ -4,6 +4,7 @@ import UIKit
 
 struct RootView: View {
     @State private var showNowPlaying = false
+    @State private var showOnboarding: Bool = false
     @Environment(PlayerStore.self) private var player
     @Environment(\.modelContext) private var modelContext
     @Environment(LibrarySnapshot.self) private var librarySnapshot
@@ -31,7 +32,20 @@ struct RootView: View {
         } message: { error in
             Text(error)
         }
-        .task { handleWidgetHandoff() }
+        .sheet(isPresented: $showOnboarding) {
+            OnboardingSheet(onContinue: {
+                let prefs = PreferencesStore()
+                prefs.hasSeenOnboarding = true
+            })
+            .interactiveDismissDisabled()
+        }
+        .task {
+            let prefs = PreferencesStore()
+            if !prefs.hasSeenOnboarding {
+                showOnboarding = true
+            }
+            handleWidgetHandoff()
+        }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
             handleWidgetHandoff()
         }

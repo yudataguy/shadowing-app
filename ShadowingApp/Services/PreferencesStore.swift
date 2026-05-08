@@ -18,4 +18,9 @@ final class PreferencesStore {
         get { defaults.bool(forKey: "shuffleEnabled") }
         set { defaults.set(newValue, forKey: "shuffleEnabled") }
     }
+
+    var hasSeenOnboarding: Bool {
+        get { defaults.bool(forKey: "hasSeenOnboarding") }
+        set { defaults.set(newValue, forKey: "hasSeenOnboarding") }
+    }
 }
