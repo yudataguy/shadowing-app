@@ -4,11 +4,11 @@ Copy-paste these into App Store Connect → App Store → 1.0 Prepare for Submis
 
 ## App name (30 char max)
 
-Shadowing
+Shadowing: Language Practice
 
 ## Subtitle (30 char max)
 
-Language Shadowing Practice
+Listen, repeat, practice fluently
 
 ## Promotional Text (170 char max)
 
