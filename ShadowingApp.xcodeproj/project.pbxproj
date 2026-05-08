@@ -25,6 +25,7 @@
 		39F7B49FC89DE037857E117C /* FolderSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604E843664305FA125A76D8 /* FolderSectionHeader.swift */; };
 		3BC3F7B459D4B85329DFB936 /* ShadowingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */; };
 		3CFA5B10EBFA7D9CD4F2E05C /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6853A3C1AA6BCFC7D937082 /* PlaylistDetailView.swift */; };
+		3E5C90593658843A237D826E /* FavoritePlaylistTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B98A2CAB1B064CD1C9DA90 /* FavoritePlaylistTimelineProvider.swift */; };
 		3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7D6E60891A5E434642DF56 /* Assets.xcassets */; };
 		41F07753EDDECA7114EF734B /* WidgetHandoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64326E1883F9B602EC07F7C2 /* WidgetHandoffTests.swift */; };
 		42D04352FE4266D34B465B27 /* LibraryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37918FF1D1721975C40385BD /* LibraryServiceTests.swift */; };
@@ -158,6 +159,7 @@
 		C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPlaylistIntent.swift; sourceTree = "<group>"; };
 		CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistSheet.swift; sourceTree = "<group>"; };
 		CE025F87AD364699EF0C2DB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		D0B98A2CAB1B064CD1C9DA90 /* FavoritePlaylistTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaylistTimelineProvider.swift; sourceTree = "<group>"; };
 		D1C2A4BB3D65678F3FA1C0F7 /* ShadowingWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShadowingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65016A9ADD86037B61AF3EF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		DB6ABF647B84E7A0FC154B05 /* PlaylistsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidgetView.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		AEAFBB84B3BA2C6F7B87E108 /* ShadowingWidget */ = {
 			isa = PBXGroup;
 			children = (
+				D0B98A2CAB1B064CD1C9DA90 /* FavoritePlaylistTimelineProvider.swift */,
 				6FDBFA4F1312B312FEAF3FBB /* Info.plist */,
 				6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */,
 				C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */,
@@ -484,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D767873BDA39BDD692DB4AC /* AppGroup.swift in Sources */,
+				3E5C90593658843A237D826E /* FavoritePlaylistTimelineProvider.swift in Sources */,
 				95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */,
 				BA6C1D84E9C5B532EC7CF89D /* PlaylistEntity.swift in Sources */,
 				9C15136B308759AC2319D1BA /* PlaylistSnapshot.swift in Sources */,
