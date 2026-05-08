@@ -57,6 +57,7 @@
 		95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
 		98D4CD97E18F7C4FB7F14F76 /* FavoritePlaylistWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197C508F6B33CE30C57780D8 /* FavoritePlaylistWidget.swift */; };
 		9BBCBA85CCDEF34408953CAA /* PlayerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCE253BC6FF95A3059DAFD /* PlayerStore.swift */; };
+		9BCBCC0B43718F0AC401A110 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BBC1BFF427E272CA782955EE /* PrivacyInfo.xcprivacy */; };
 		9C15136B308759AC2319D1BA /* PlaylistSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */; };
 		9CC33FEA7E8AE1A530D8A339 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */; };
 		9CCBE92FE9836D09E2DCB779 /* PlaylistSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84719B4156617F85C08BD6A1 /* PlaylistSnapshotTests.swift */; };
@@ -172,6 +173,7 @@
 		B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaylistWidgetView.swift; sourceTree = "<group>"; };
 		BA6B37778E81944A3E994865 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSnapshot.swift; sourceTree = "<group>"; };
+		BBC1BFF427E272CA782955EE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C191AA3FB2338D589CE43332 /* BundledLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundledLibraryTests.swift; sourceTree = "<group>"; };
 		C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidget.swift; sourceTree = "<group>"; };
 		C5B1B7B9FB7517DC78D09CF4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				6916C5FF8C7531E3092FA91D /* PlaylistsTimelineProvider.swift */,
 				C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */,
 				DB6ABF647B84E7A0FC154B05 /* PlaylistsWidgetView.swift */,
+				BBC1BFF427E272CA782955EE /* PrivacyInfo.xcprivacy */,
 				3D73D6B1C74113EC86DE73C4 /* ShadowingWidget.entitlements */,
 				66A674582863E61CD3A70804 /* ShadowingWidgetBundle.swift */,
 			);
@@ -477,6 +480,7 @@
 			buildConfigurationList = 7BB917D9F7EB11A1FF418A01 /* Build configuration list for PBXNativeTarget "ShadowingWidget" */;
 			buildPhases = (
 				5E6F5E5479AB19C974CBDD3F /* Sources */,
+				0099EAC2CABDFF7DAF687A80 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -525,6 +529,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0099EAC2CABDFF7DAF687A80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BCBCC0B43718F0AC401A110 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E52664094F0C5B8A556D1671 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
