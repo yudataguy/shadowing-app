@@ -60,6 +60,7 @@
 		9C15136B308759AC2319D1BA /* PlaylistSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */; };
 		9CC33FEA7E8AE1A530D8A339 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */; };
 		9CCBE92FE9836D09E2DCB779 /* PlaylistSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84719B4156617F85C08BD6A1 /* PlaylistSnapshotTests.swift */; };
+		9F73E3BB1D5D8774601D33DF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C5B1B7B9FB7517DC78D09CF4 /* PrivacyInfo.xcprivacy */; };
 		A25F6137FD109141466D8DFB /* PlaylistSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */; };
 		AFC3996E39791FD29E07BCC1 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FF795F0E0A7021056729A /* LibraryView.swift */; };
 		B15667C83DCA7B06A65A7249 /* spanish-don-quijote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39285FE10CCDE8615A10C6EF /* spanish-don-quijote.mp3 */; };
@@ -173,6 +174,7 @@
 		BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSnapshot.swift; sourceTree = "<group>"; };
 		C191AA3FB2338D589CE43332 /* BundledLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundledLibraryTests.swift; sourceTree = "<group>"; };
 		C38089911FBFF5B2765E86D0 /* PlaylistsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidget.swift; sourceTree = "<group>"; };
+		C5B1B7B9FB7517DC78D09CF4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPlaylistIntent.swift; sourceTree = "<group>"; };
 		CBC13AAECB5AA1ED4DA673B7 /* AddToPlaylistSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistSheet.swift; sourceTree = "<group>"; };
 		CE025F87AD364699EF0C2DB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				2F7D6E60891A5E434642DF56 /* Assets.xcassets */,
 				238F994839829652238D3AF0 /* Info.plist */,
+				C5B1B7B9FB7517DC78D09CF4 /* PrivacyInfo.xcprivacy */,
 				AFA3F40C6C561B344CE3EEB7 /* ShadowingApp.entitlements */,
 				013F569B6AEB8D4748F451B2 /* ShadowingAppApp.swift */,
 				D0E8A72AFB662CA37539990F /* Audio */,
@@ -527,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */,
+				9F73E3BB1D5D8774601D33DF /* PrivacyInfo.xcprivacy in Resources */,
 				8E0D5A923A870BC16CB448E8 /* SampleAudio.json in Resources */,
 				B2251EFD29179057AD97CBEA /* english-pride-and-prejudice.mp3 in Resources */,
 				897342EC639E0AB81943C87B /* french-trois-mousquetaires.mp3 in Resources */,
@@ -644,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -652,6 +657,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp.Widget;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -719,6 +725,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -727,6 +734,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp.Widget;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -741,6 +749,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShadowingApp/ShadowingApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -748,6 +757,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -825,6 +835,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShadowingApp/ShadowingApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -832,6 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudataguy.ShadowingApp;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
