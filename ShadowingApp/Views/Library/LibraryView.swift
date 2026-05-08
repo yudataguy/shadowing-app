@@ -17,43 +17,38 @@ struct LibraryView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if bookmarks.all().isEmpty {
-                    ContentUnavailableView {
-                        Label("No MP3 folder yet", systemImage: "music.note.list")
-                    } description: {
-                        Text("Pick a folder in iCloud Drive or Files to get started.")
-                    } actions: {
-                        Button("Pick Folder") { showFirstPicker = true }
-                            .buttonStyle(.borderedProminent)
-                    }
-                } else if sections.isEmpty {
-                    ContentUnavailableView("No MP3s found",
-                        systemImage: "music.note",
-                        description: Text("Add audio files to your selected folder."))
-                } else {
-                    List {
-                        ForEach(sections) { section in
-                            Section {
-                                ForEach(section.tracks) { track in
-                                    TrackRow(track: track) {
-                                        player.play(queue: section.tracks,
-                                                    startIndex: section.tracks.firstIndex(of: track) ?? 0)
-                                    }
-                                }
-                            } header: {
-                                FolderSectionHeader(
-                                    folderName: section.name,
-                                    onPlay: { player.playFolder(section.tracks, shuffled: false) },
-                                    onShuffle: { player.playFolder(section.tracks, shuffled: true) }
-                                )
+            List {
+                ForEach(sections) { section in
+                    Section {
+                        ForEach(section.tracks) { track in
+                            TrackRow(track: track) {
+                                player.play(queue: section.tracks,
+                                            startIndex: section.tracks.firstIndex(of: track) ?? 0)
                             }
                         }
+                    } header: {
+                        FolderSectionHeader(
+                            folderName: section.name,
+                            onPlay: { player.playFolder(section.tracks, shuffled: false) },
+                            onShuffle: { player.playFolder(section.tracks, shuffled: true) }
+                        )
                     }
-                    .listStyle(.plain)
-                    .refreshable { rescan() }
+                }
+
+                if bookmarks.all().isEmpty {
+                    Section {
+                        Button {
+                            showFirstPicker = true
+                        } label: {
+                            Label("Add your own MP3 folder", systemImage: "folder.badge.plus")
+                        }
+                    } footer: {
+                        Text("Add a folder from iCloud Drive or Files to bring in your own audio.")
+                    }
                 }
             }
+            .listStyle(.plain)
+            .refreshable { rescan() }
             .navigationTitle("Library")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -84,6 +79,17 @@ struct LibraryView: View {
     private func rescan() {
         var newSections: [LibrarySection] = []
         var newActiveURLs: [UUID: URL] = [:]
+
+        // Bundled samples — always present in the library so first-time users
+        // (and App Reviewers) have audio to play immediately.
+        let bundledTracks = BundledLibrary.tracks()
+        if !bundledTracks.isEmpty {
+            newSections.append(LibrarySection(
+                id: BundledLibrary.folderID,
+                name: BundledLibrary.folderName,
+                tracks: bundledTracks
+            ))
+        }
 
         for bookmark in bookmarks.all() {
             guard let resolved = bookmarks.resolve(bookmark) else { continue }
