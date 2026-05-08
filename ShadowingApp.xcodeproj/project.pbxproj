@@ -46,7 +46,9 @@
 		84D10E0DDF0B77D6D7F70954 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7D6A28B8939A88ED13E99D /* DocumentPicker.swift */; };
 		87ED6EEAE3E02BE0635F60FC /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ED14221BC2166ED1B0303 /* MiniPlayerBar.swift */; };
 		8804E34B200EE70F638C60C0 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C4AC608AF0209A1840688 /* TrackRow.swift */; };
+		897342EC639E0AB81943C87B /* french-trois-mousquetaires.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F279194BB61E410E1BEDF20 /* french-trois-mousquetaires.mp3 */; };
 		8B2B82D6ACB167EAD4EF4447 /* PlaylistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D734FBEA839AA47147BFE6 /* PlaylistEntry.swift */; };
+		8E0D5A923A870BC16CB448E8 /* SampleAudio.json in Resources */ = {isa = PBXBuildFile; fileRef = F99561C5934090D01F6A6273 /* SampleAudio.json */; };
 		8E87F06CE06F82A12EA9AC3B /* FavoritePlaylistWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2561B5B9DC9F8F8E4315ADC /* FavoritePlaylistWidgetView.swift */; };
 		92D0C7955C06FE475F982464 /* LoopMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D51F486911CCE5BB8E562C /* LoopMode.swift */; };
 		95DD1231C6E7295FF1132406 /* PlayPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772B0046E1E593026A5CB4 /* PlayPlaylistIntent.swift */; };
@@ -57,7 +59,9 @@
 		9CCBE92FE9836D09E2DCB779 /* PlaylistSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84719B4156617F85C08BD6A1 /* PlaylistSnapshotTests.swift */; };
 		A25F6137FD109141466D8DFB /* PlaylistSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37FAF39933A057F7F086F4 /* PlaylistSnapshot.swift */; };
 		AFC3996E39791FD29E07BCC1 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FF795F0E0A7021056729A /* LibraryView.swift */; };
+		B15667C83DCA7B06A65A7249 /* spanish-don-quijote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39285FE10CCDE8615A10C6EF /* spanish-don-quijote.mp3 */; };
 		B1FB3AD2DCA66618E305B8E2 /* SelectPlaylistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48A1A4C6F0E44491D9C8A9 /* SelectPlaylistIntent.swift */; };
+		B2251EFD29179057AD97CBEA /* english-pride-and-prejudice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E6B1DC91A3F2ACB06E6FA /* english-pride-and-prejudice.mp3 */; };
 		BA6C1D84E9C5B532EC7CF89D /* PlaylistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED60FE76CBE1CFB29A6A6DA /* PlaylistEntity.swift */; };
 		C44C2FE11D14C3003148EFFD /* AVPlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53160099814CBCF9EB672F3F /* AVPlayerEngine.swift */; };
 		CC12433F5BA80100E11498D5 /* FakePlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D8FC0BDBE1A6A6F7C0CAD /* FakePlayerEngine.swift */; };
@@ -112,6 +116,7 @@
 		03C37934D1A7E1E68003FB38 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		0702EB5784B795D2FFAE3612 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		080157B13D804FD26C8431C4 /* PlayerStoreQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStoreQueueTests.swift; sourceTree = "<group>"; };
+		0A4E6B1DC91A3F2ACB06E6FA /* english-pride-and-prejudice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "english-pride-and-prejudice.mp3"; sourceTree = "<group>"; };
 		0ACCA3E64D4D97683D69C54A /* PlaylistEntityQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistEntityQueryTests.swift; sourceTree = "<group>"; };
 		0C7D6A28B8939A88ED13E99D /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		110C4AC608AF0209A1840688 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 		314444F48B3DB6A2B79E2336 /* FoldersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersSettingsView.swift; sourceTree = "<group>"; };
 		36D7E7AA5FF64F8F0D905E34 /* PlayerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEngine.swift; sourceTree = "<group>"; };
 		37918FF1D1721975C40385BD /* LibraryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryServiceTests.swift; sourceTree = "<group>"; };
+		39285FE10CCDE8615A10C6EF /* spanish-don-quijote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "spanish-don-quijote.mp3"; sourceTree = "<group>"; };
 		3A20790FBEFB1D3301080955 /* ShadowingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ShadowingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C11BB0E55305C2B41BE9DAA /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		3D73D6B1C74113EC86DE73C4 /* ShadowingWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowingWidget.entitlements; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		967FF795F0E0A7021056729A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		98AE016E46F9CFE848220B34 /* PlaybackStatePersisting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackStatePersisting.swift; sourceTree = "<group>"; };
 		9DE8F2D89415DD7C6912A4BE /* SwiftDataPlaybackPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPlaybackPersistence.swift; sourceTree = "<group>"; };
+		9F279194BB61E410E1BEDF20 /* french-trois-mousquetaires.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "french-trois-mousquetaires.mp3"; sourceTree = "<group>"; };
 		AA417C390BED0F79E4C6A25D /* TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTests.swift; sourceTree = "<group>"; };
 		ACE8479BAEAB28CB2736F7CF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AFA3F40C6C561B344CE3EEB7 /* ShadowingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowingApp.entitlements; sourceTree = "<group>"; };
@@ -178,6 +185,7 @@
 		EE9D8FC0BDBE1A6A6F7C0CAD /* FakePlayerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePlayerEngine.swift; sourceTree = "<group>"; };
 		EEEAC6A60E548AAA41D35074 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		F856562249660E048B874511 /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
+		F99561C5934090D01F6A6273 /* SampleAudio.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleAudio.json; sourceTree = "<group>"; };
 		F9D5869D82869E4D8B25DFB5 /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
 		FE2D12580DFA520D5E82BF3D /* ShadowingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowingAppTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +212,16 @@
 				D6D1256BE9A11769E9D73A5F /* Settings */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		20B3BC072FC5F15049105AF3 /* SampleAudio */ = {
+			isa = PBXGroup;
+			children = (
+				0A4E6B1DC91A3F2ACB06E6FA /* english-pride-and-prejudice.mp3 */,
+				9F279194BB61E410E1BEDF20 /* french-trois-mousquetaires.mp3 */,
+				39285FE10CCDE8615A10C6EF /* spanish-don-quijote.mp3 */,
+			);
+			path = SampleAudio;
 			sourceTree = "<group>";
 		};
 		2DB6AEF0718AE602E295F0F2 = {
@@ -249,6 +267,15 @@
 				ACE8479BAEAB28CB2736F7CF /* Track.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		504F95533E8B617439841595 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F99561C5934090D01F6A6273 /* SampleAudio.json */,
+				20B3BC072FC5F15049105AF3 /* SampleAudio */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		514EDE355BF8DF0F48F63AF5 /* Products */ = {
@@ -298,6 +325,7 @@
 				D0E8A72AFB662CA37539990F /* Audio */,
 				E89EE42938359CF5420411D5 /* Intents */,
 				504C8D9DB79526F4842C7BC9 /* Models */,
+				504F95533E8B617439841595 /* Resources */,
 				CEF2EA1D8664B147B73452AB /* Services */,
 				186DA85F1BB9598F9DC1EB6D /* State */,
 				18ECA3A706CFF7DC180D6E7C /* Views */,
@@ -482,6 +510,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC8EE9CBFC8F5C5346D035A /* Assets.xcassets in Resources */,
+				8E0D5A923A870BC16CB448E8 /* SampleAudio.json in Resources */,
+				B2251EFD29179057AD97CBEA /* english-pride-and-prejudice.mp3 in Resources */,
+				897342EC639E0AB81943C87B /* french-trois-mousquetaires.mp3 in Resources */,
+				B15667C83DCA7B06A65A7249 /* spanish-don-quijote.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

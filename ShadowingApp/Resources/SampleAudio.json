@@ -1,0 +1,34 @@
+{
+  "samples": [
+    {
+      "filename": "english-pride-and-prejudice.mp3",
+      "title": "Pride and Prejudice \u2014 Opening",
+      "language": "English",
+      "author": "Jane Austen",
+      "narrator": "Karen Savage",
+      "duration_seconds": 45,
+      "source_url": "https://archive.org/download/prideandprejudice_1005_librivox/prideandprejudice_01_austen_64kb.mp3",
+      "license": "Public Domain (LibriVox)"
+    },
+    {
+      "filename": "spanish-don-quijote.mp3",
+      "title": "Don Quijote \u2014 Cap\u00edtulo 1",
+      "language": "Spanish",
+      "author": "Miguel de Cervantes",
+      "narrator": "LibriVox volunteers",
+      "duration_seconds": 45,
+      "source_url": "https://archive.org/download/don_quijote_vol1_0706_librivox/quijote_vol1_01_cervantes_64kb.mp3",
+      "license": "Public Domain (LibriVox)"
+    },
+    {
+      "filename": "french-trois-mousquetaires.mp3",
+      "title": "Les Trois Mousquetaires \u2014 Chapitre 1",
+      "language": "French",
+      "author": "Alexandre Dumas",
+      "narrator": "LibriVox volunteers",
+      "duration_seconds": 45,
+      "source_url": "https://archive.org/download/trois_mousquetaires_0810_librivox/troismousquetaires_01_dumas_64kb.mp3",
+      "license": "Public Domain (LibriVox)"
+    }
+  ]
+}
