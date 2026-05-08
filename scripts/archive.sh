@@ -14,6 +14,7 @@ xcodebuild archive \
   -configuration Release \
   -destination 'generic/platform=iOS' \
   -archivePath "$ARCHIVE_PATH" \
+  -allowProvisioningUpdates \
   CODE_SIGN_STYLE=Automatic
 
 echo

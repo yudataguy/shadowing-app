@@ -503,6 +503,11 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					491A2F8348FE8DB7DDE189DC = {
+						DevelopmentTeam = 5VW4JX4QTK;
+						ProvisioningStyle = Automatic;
+					};
+					CA1C3CFCF2B3E27830DDDBC9 = {
+						DevelopmentTeam = 5VW4JX4QTK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -660,7 +665,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VW4JX4QTK;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -737,7 +744,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowingWidget/ShadowingWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VW4JX4QTK;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -762,6 +771,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VW4JX4QTK;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -848,6 +858,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VW4JX4QTK;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ShadowingApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
