@@ -40,7 +40,7 @@ WHAT'S INCLUDED
 
 PRIVACY
 
-The app does not collect, track, or transmit any user data. All playlists, preferences, and playback state are stored on your device. Audio content from your folders stays in your iCloud Drive — the app never uploads it. See the privacy policy at: https://<your-username>.github.io/shadowing-app/privacy-policy
+The app does not collect, track, or transmit any user data. All playlists, preferences, and playback state are stored on your device. Audio content from your folders stays in your iCloud Drive — the app never uploads it. See the privacy policy at: https://yudataguy.github.io/shadowing-app/privacy-policy
 
 WHO IT'S FOR
 
@@ -69,15 +69,15 @@ Yes — contains third-party content (LibriVox public-domain recordings, credite
 
 ## Support URL
 
-https://github.com/<your-username>/shadowing-app/issues
+https://github.com/yudataguy/shadowing-app/issues
 
 ## Marketing URL (optional)
 
-https://<your-username>.github.io/shadowing-app/
+https://yudataguy.github.io/shadowing-app/
 
 ## Privacy Policy URL
 
-https://<your-username>.github.io/shadowing-app/privacy-policy
+https://yudataguy.github.io/shadowing-app/privacy-policy
 
 ## What's New in This Version (170 char max)
 
@@ -89,7 +89,6 @@ Initial release.
 
 Before pasting into App Store Connect:
 
-- [ ] Replace `<your-username>` with your actual GitHub username (3 spots).
 - [ ] Replace `<Your Name>` with the legal name you registered for the Apple Developer Program.
-- [ ] Verify the privacy policy URL renders (after pushing to GitHub and enabling Pages).
+- [ ] Verify the privacy policy URL renders: https://yudataguy.github.io/shadowing-app/privacy-policy
 - [ ] Verify the support URL points to a real, public Issues page.

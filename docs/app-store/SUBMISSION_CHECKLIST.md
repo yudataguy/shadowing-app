@@ -18,7 +18,7 @@ The privacy policy needs a public URL. Hosting on GitHub Pages is free and versi
 - [ ] In the local repo:
   ```bash
   cd /Users/samyu/Downloads/code/playground/shadowing-app
-  git remote add origin https://github.com/<your-username>/shadowing-app.git
+  git remote add origin https://github.com/yudataguy/shadowing-app.git
   git push -u origin feat/initial-build
   # Optionally merge to main:
   git checkout main 2>/dev/null || git checkout -b main
@@ -28,14 +28,14 @@ The privacy policy needs a public URL. Hosting on GitHub Pages is free and versi
 - [ ] In GitHub → Settings → Pages: Source = "Deploy from a branch", Branch = `main`, Folder = `/docs`
 - [ ] Wait ~1 minute, then verify the policy renders at:
   ```
-  https://<your-username>.github.io/shadowing-app/privacy-policy
+  https://yudataguy.github.io/shadowing-app/privacy-policy
   ```
 
 ## Phase 3: Update placeholders in committed files
 
-Two files have `<your-username>` and `<Your Name>` placeholders that need real values before paste:
+Two files have `yudataguy` and `<Your Name>` placeholders that need real values before paste:
 
-- [ ] Edit `docs/app-store/marketing.md` — replace 3 occurrences of `<your-username>` and `<Your Name>`.
+- [ ] Edit `docs/app-store/marketing.md` — replace 3 occurrences of `yudataguy` and `<Your Name>`.
 - [ ] Edit `docs/privacy-policy.md` — the contact section is generic; if you want a specific contact (email or GitHub Issues link), update it now.
 - [ ] Commit & push:
   ```bash
