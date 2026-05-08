@@ -58,6 +58,7 @@ targets:
     sources:
       - path: ShadowingWidget
       - path: ShadowingApp/Intents/PlayPlaylistIntent.swift
+      - path: ShadowingApp/Intents/PlaylistEntity.swift
       - path: ShadowingApp/Services/AppGroup.swift
       - path: ShadowingApp/Services/PlaylistSnapshot.swift
     info:
